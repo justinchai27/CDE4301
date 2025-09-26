@@ -19,7 +19,7 @@ class TeamMember extends HTMLElement {
   render() {
     const div = document.createElement("div");
     div.innerHTML = `
-    <img src="${this.avatar}" alt="${this.name}">
+    <!-- img src="${this.avatar}" alt="${this.name}" -->
     <p><strong>${this.name}</strong></p>
     <p>${this.department}</p>
     <p>${this.year}</p>
