@@ -1,0 +1,2906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CDE4301 FTS-401 Report</title>
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
+
+  <link rel="stylesheet" href="./index.css">
+
+  <link rel="stylesheet" href="./components/team-member/team-member.css">
+  <script type="module" src="./components/team-member/team-member.js"></script>
+
+  <link rel="stylesheet" href="./components/table-of-content/table-of-content.css">
+
+  <script type="module" src="./components/image/image-component.js"></script>
+
+  <script type="module" src="./components/video/video.js"></script>
+
+  <link rel="stylesheet" href="./components/references/references.css">
+
+  <link rel="stylesheet" href="./components/scroll-to-top/scroll-to-top.css">
+  <script src="./components/scroll-to-top/scroll-to-top.js"></script>
+
+  <script src="./components/table-component/table-component.js"></script>
+
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <aside class="page-sidebar" aria-label="Section navigation">
+    <div class="sidebar-inner">
+      <p class="sidebar-eyebrow">Navigation</p>
+      <div class="table-of-content table-of-content-sidebar">
+        <h2>Browse Report</h2>
+        <sl-tree>
+      
+          <!-- 1. Introduction -->
+          <sl-tree-item expanded>
+            <a href="#introduction">1. Introduction and Scope</a>
+      
+            <sl-tree-item><a href="#background">1.1 Background of NUS FSAE EV</a></sl-tree-item>
+            <sl-tree-item><a href="#problem-statement">1.2 Problem Statement</a></sl-tree-item>
+            <sl-tree-item><a href="#user-needs">1.3 User Needs</a></sl-tree-item>
+            <sl-tree-item><a href="#constraints">1.4 Constraints</a></sl-tree-item>
+            <sl-tree-item><a href="#project-objective">1.5 Project Objective</a></sl-tree-item>
+          </sl-tree-item>
+      
+          <!-- 2. Literature Review -->
+          <sl-tree-item expanded>
+            <a href="#literature-review">2. Literature Review</a>
+      
+            <sl-tree-item><a href="#dynamometer-types">2.1 Dynamometer Types</a></sl-tree-item>
+            <sl-tree-item><a href="#motor-types">2.2 Motor Types</a></sl-tree-item>
+          </sl-tree-item>
+      
+          <!-- 3. Frame, Mounting, Layout -->
+          <sl-tree-item expanded>
+            <a href="#section-3">3. Frame, Mounting, and Layout Design</a>
+      
+            <sl-tree-item><a href="#frame-design-criteria">3.1 Frame Design Criteria</a></sl-tree-item>
+            <sl-tree-item><a href="#frame-concept-development">3.2 Frame Concept Development</a></sl-tree-item>
+            <sl-tree-item><a href="#mount-design-criteria">3.3 Mount Design Criteria</a></sl-tree-item>
+            <sl-tree-item><a href="#mount-concept-development">3.4 Mount Concept Development</a></sl-tree-item>
+            <sl-tree-item><a href="#fea-frame">3.5 FEA Simulation Results (Frame)</a></sl-tree-item>
+            <sl-tree-item><a href="#fea-flange">3.6 FEA Simulation Results (Flange)</a></sl-tree-item>
+          </sl-tree-item>
+      
+          <!-- 4. Limitations -->
+          <sl-tree-item expanded>
+            <a href="#limitations">4. Limitations of our Design</a>
+      
+            <sl-tree-item><a href="#limitation-4-1">4.1 Lack of Electrical Space</a></sl-tree-item>
+            <sl-tree-item><a href="#limitation-4-2">4.2 Lack of a Counter-balance</a></sl-tree-item>
+            <sl-tree-item><a href="#limitation-4-3">4.3 Manufacturing Accuracy</a></sl-tree-item>
+          </sl-tree-item>
+      
+          <!-- 5. Next Steps -->
+          <sl-tree-item>
+            <a href="#next-steps-sem2">5. Next Steps in Sem II</a>
+          </sl-tree-item>
+
+          <sl-tree-item expanded>
+            <a href="#additional-design-elements">6. Additional Design Elements</a>
+
+            <sl-tree-item><a href="#cooling-selection">6.1 Cooling Selection</a></sl-tree-item>
+            <sl-tree-item><a href="#balancing-beam-extension">6.2 Balancing Beam Extension</a></sl-tree-item>
+          </sl-tree-item>
+
+          <sl-tree-item expanded>
+            <a href="#manufacturing-assembly">7. Manufacturing and Assembly</a>
+
+            <sl-tree-item><a href="#frame-truss-material">7.1 Frame Truss Structure Material</a></sl-tree-item>
+            <sl-tree-item><a href="#side-panel-material">7.2 Side Panel Material</a></sl-tree-item>
+            <sl-tree-item><a href="#panel-truss-assembly">7.3 Panel-Truss Assembly</a></sl-tree-item>
+            <sl-tree-item><a href="#mobility-positioning">7.4 Mobility and Positioning</a></sl-tree-item>
+            <sl-tree-item><a href="#flange-manufacturing">7.5 Flange</a></sl-tree-item>
+            <sl-tree-item><a href="#cooling-mount">7.6 Cooling Mount</a></sl-tree-item>
+          </sl-tree-item>
+
+          <sl-tree-item expanded>
+            <a href="#testing">8. Testing</a>
+
+            <sl-tree-item><a href="#frame-structural-integrity-test">8.1 Frame Structural Integrity Test</a></sl-tree-item>
+            <sl-tree-item><a href="#anti-toppling-stability-test">8.2 Anti-Toppling Stability Test</a></sl-tree-item>
+          </sl-tree-item>
+
+          <sl-tree-item expanded>
+            <a href="#simulation">9. Simulation</a>
+
+            <sl-tree-item><a href="#modal-analysis-frame">9.1 Modal Analysis for Frame</a></sl-tree-item>
+            <sl-tree-item><a href="#fatigue-analysis-flange">9.2 Fatigue Analysis for Flange</a></sl-tree-item>
+          </sl-tree-item>
+
+          <sl-tree-item>
+            <a href="#conclusion">10. Conclusion</a>
+          </sl-tree-item>
+
+          <sl-tree-item>
+            <a href="#references">References</a>
+          </sl-tree-item>
+
+          <sl-tree-item>
+            <a href="#appendix">Appendix</a>
+          </sl-tree-item>
+        </sl-tree>
+      </div>
+    </div>
+  </aside>
+
+  <div class="page-shell">
+    <main class="content">
+    <div class="hero-panel">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">NUS FSAE EV | Engineering Report</p>
+        <h1>Design and Development of the NUS FSAE Dynamometer</h1>
+        <p class="hero-summary">
+          Phase 1 focuses on the structural frame, mounting flange, cooling layout, and validation of a
+          compact hub-mounted dynamometer for the NUS Formula SAE electric vehicle team.
+        </p>
+      </div>
+    </div>
+
+    <div class="team-member-wrapper">
+      <team-member avatar="" name="Chen Size" department="Mechanical Engineering" year="Year 4"></team-member>
+      <team-member avatar="" name="Justin Chai" department="Biomedical Engineering" year="Year 4"></team-member>
+    </div>
+
+    <div class="quick-links">
+      <a href="#abstract">Abstract</a>
+      <a href="#section-3">Frame Design</a>
+      <a href="#testing">Testing</a>
+      <a href="#simulation">Simulation</a>
+      <a href="#conclusion">Conclusion</a>
+      <a href="#appendix">Appendix</a>
+    </div>
+
+    <!-- ========================= -->
+    <!--          CONTENT          -->
+    <!-- ========================= -->
+    <sl-divider></sl-divider>
+
+    <!-- ====== ABSTRACT ====== -->
+    <div id="abstract">
+      <h2>Abstract</h2>
+      <p>
+        Our project aims to design and develop a hub-mounted dynamometer (dyno) for 
+        the NUS Formula Society of Automotive Engineers Electric Vehicle (FSAE EV). 
+        A dyno measures the torque and power output of the car at different rotation 
+        speeds. This provides quantitative data on the overall car performance under 
+        controlled conditions and can be used to simulate track conditions in subsequent 
+        iterations.
+      </p>
+      <p>
+        Our key constraints include a limited electrical engineering background, a 
+        $1600 budget, and limited workshop space. To address our limited knowledge 
+        of Electrical Engineering, we will focus on the dynamometer’s structural 
+        frame, wheel-hub mount, and cooling system in this phase of the project, 
+        ensuring that the dyno is compact, cost-effective, and safe to run in the 
+        NUS FSAE workshop.
+      </p>
+      <p>
+        Additionally, we will use the EMRAX 228 motor as the dyno’s absorption motor, 
+        as it is readily available in the FSAE workshop and compact, aligning with 
+        our user needs and constraints to develop a cost-efficient, portable dyno.
+      </p>
+      <p>
+        Expected deliverables in Semester I include the complete CAD of a compact, 
+        safe, and modular dyno layout, demonstrating feasibility and layout 
+        considerations. This design will be sent for fabrication before Semester 2.
+      </p>
+      <p>
+        Expected deliverables in Semester II include an assembled and validated dyno 
+        prototype based on Sem I CAD, mounted to the FSAE EV wheel hub and supported 
+        by structural analysis, cooling system testing, and proof of concept work.
+      </p>
+    </div>
+    <sl-divider></sl-divider>
+
+    <!-- ====== 1. INTRODUCTION ====== -->
+    <div id="introduction">
+      <h2>1. Introduction and Scope</h2>
+      <p>
+        NUS FSAE team designs and builds a formula-style Electric Vehicle (EV) to compete in both local and international races. Currently, the team tests components such as the motor, battery, drivetrain, and transmission independently or conducts on-track tests near competition. However, the current method is unable to quantitatively evaluate the car’s overall performance and obtain data such as torque and power output across various rotational speeds, as well as drivetrain efficiency under controlled conditions. This limits the team’s ability to optimise its performance.
+      </p>
+      <p>
+        By developing a dyno system to measure and quantify these key performance parameters, such as torque and power, the team can obtain consistent and reliable data on the EV’s overall performance. The data enables them to run simulations for various track conditions, identify performance gaps, and optimise different components, hence improving the FSAE EV’s competitiveness in future competitions.  
+      </p>
+
+    <!-- ====== 1.1 BACKGROUND ====== -->
+    <div id="background">
+      <h3>1.1 Background of NUS FSAE EV</h3>
+
+      <image-component 
+        tag="fig1" 
+        source="assets/figure1_fsae_ev.png"
+        subtitle="Figure 1: NUS FSAE EV"
+      ></image-component>
+
+      <p>
+        The NUS FSAE EV is a formula-style EV, with its overall dimensions and ride height being smaller and lower than road cars, respectively. It is also mounted with non-standard wheel hubs as compared to road cars. The FSAE EV is powered by a single electric motor, EMRAX 228, to the rear wheels, producing high torque at low rotation per minute (rpm), with a peak output power of 124kw. However, the car is limited to 80 kilowatts (kW) in power and a maximum of 2000 rpm based on FSAE competition rules.
+      </p>
+    </div>
+
+    <!-- ====== 1.2 PROBLEM STATEMENT ====== -->
+    <div id="problem-statement">
+      <h3>1.2 Problem Statement</h3>
+      <p>
+        Current in-market dyno systems are expensive, bulky, and mainly designed for road cars. These commercial dynos are not suitable for the FSAE team because of the significant difference in dimensions, height, and wheel hub configuration. Moreover, commercial dynos require a lot of space for both operation and storage, which exceeds the capacity of the limited space in the FSAE workshop. Finally, given the high cost of these dynos and the team’s limited testing frequency (approximately twice per year), it is difficult to justify the return on investment of purchasing a commercial dyno.
+      </p>
+    </div>
+
+    <!-- ====== 1.3 USER NEEDS ====== -->
+    <div id="user-needs">
+      <h3>1.3 User Needs</h3>
+      <p>From interviews with the FSAE team, our design criteria include:</p>
+
+      <ul>
+        <li><strong>Cost-effective:</strong> Lower cost than purchasing a commercial dyno.</li>
+        <li><strong>Compact and light:</strong> Easy to store; stackable if needed.</li>
+        <li><strong>Minimal setup complexity:</strong> Plug-and-play, simple mounting.</li>
+        <li><strong>Portable:</strong> Easy transportation within workshop.</li>
+        <li><strong>Stable and strong:</strong> Must withstand vehicle torque and weight.</li>
+        <li><strong>Safe to operate:</strong> Secure hub-to-dyno mounting.</li>
+        <li><strong>Reliable:</strong> Capable of repeated runs with low maintenance.</li>
+      </ul>
+    </div>
+
+    <!-- ====== 1.4 CONSTRAINTS ====== -->
+    <div id="constraints">
+      <h3>1.4 Constraints</h3>
+      <p>
+        One of our key constraints when embarking on the project is the limited knowledge and experience in electrical engineering, which is crucial when developing the dyno’s electrical component to output torque and power figures of the vehicle. Additionally, the limited workshop space and budget ($1600) also restrict the size and the components to be used in the dyno.  
+      </p>
+    </div>
+
+    <!-- ========================= -->
+<!--     1.5 PROJECT OBJECTIVE -->
+<!-- ========================= -->
+<div id="project-objective">
+  <h3>1.5 Project Objective</h3>
+
+  <p>
+    We want to design a custom dynamometer for the NUS FSAE EV to accurately 
+    measure its performance output while being sufficiently compact for the 
+    limited workshop space.
+  </p>
+
+  <p>
+    As explained in Section 1.2, commercial dynos are unsuitable for the FSAE 
+    team, leading to the decision to develop a custom in-house dyno. This project 
+    spans several years, with each phase focusing on a different aspect of the 
+    dyno’s development. A tentative description of each phase’s focus is shown 
+    in Figure&nbsp;2.
+  </p>
+
+  <p>
+    As our backgrounds are in Mechanical and Biomedical Engineering, with limited 
+    experience in Electrical Engineering, our project supervisor tasked us to 
+    work on the dyno’s frame structure, mounting between the motor and the FSAE 
+    EV, and the dyno’s cooling system in Phase&nbsp;1. In Phase&nbsp;2, students 
+    with stronger electrical backgrounds will further develop the electrical 
+    components of the dyno and build a complete interface with the EMRAX 228 to 
+    accurately measure the EV’s power output. In Phase&nbsp;3, the dyno can be 
+    scaled up and mounted to two rear wheels, or eventually all four wheels when 
+    the FSAE EV transitions to a four-wheel-drive configuration.
+  </p>
+
+  <!-- ===== FIGURE 2 (uploaded arrow diagram) ===== -->
+  <image-component
+    tag="fig2"
+    source="assets/figure2_project_outline.png"
+    subtitle="Figure 2: FSAE Dyno Project Outline"
+  ></image-component>
+
+  <p><strong>In Phase 1, we will focus on the following aspects:</strong></p>
+
+  <ul>
+    <li>Ensure mechanical safety and cooling efficiency.</li>
+    <li>Focus on frame stability and mounting stability to withstand the torque and weight of the vehicle.</li>
+    <li>Optimise the component layout.</li>
+    <li>Enable modularity for future phases (e.g., electrical components in Phase&nbsp;2).</li>
+  </ul>
+    </div>
+</div>
+
+<!-- ========================= -->
+<!--      2. LITERATURE REVIEW -->
+<!-- ========================= -->
+<div id="literature-review">
+  <h2>2. Literature Review</h2>
+
+<!-- ========================= -->
+<!--     2.1 DYNAMOMETER TYPES -->
+<!-- ========================= -->
+<div id="dynamometer-types">
+  <h3>2.1 Dynamometer Types</h3>
+
+  <div style="width:100%; overflow-x:auto;">
+    <div id="dyno-types-table"></div>
+  </div>
+  <p style="text-align:center; font-style:italic; margin-top:10px;">
+    Figure 3: Different Dyno Types in the Market for EVs.
+  </p>
+  
+
+  <!-- =====  Text  ===== -->
+  <p>
+    The most common dyno type, the chassis dyno, requires complex installation and a large, dedicated space. 
+    These dynos’ rollers are installed into the floor or a platform that is as long as the vehicle, reducing 
+    portability and compactness. Additionally, chassis dyno has the potential risk of wheel slip, reducing 
+    safety and accuracy. Chassis dyno also requires varying rollers to accommodate different power levels, 
+    making them less versatile and costly to operate.
+  </p>
+
+  <p>
+    Therefore, we decided to adopt the idea of a hub-mounted dyno instead, connecting directly to the vehicle’s 
+    wheel hub, ensuring safety and accuracy of these dyno runs. Hub dyno mitigates the risk of wheel slip, common 
+    in chassis dynos, especially from high torque generated by EVs. Additionally, 
+    hub dynos can have a relatively more compact design, making them suited to our design criteria due to the 
+    limited space available.
+  </p>
+
+  <p>
+    Some commercial hub-mounted dyno systems, such as Dynapack, Dynolyze and Mustang Advanced Engineering (MAE) hub-dynos, 
+    are relatively compact compared to other dyno types and provide accurate measurement of the car’s output. 
+    Figure 4 provides a comparison of the various commercially available hubs-mounted dynos, focusing on 
+    specifications that are important to the FSAE team.
+  </p>
+</div>
+
+<!-- ========================= -->
+<!--    COMMERCIAL DYNO TABLE  -->
+<!-- ========================= -->
+
+<div style="width: 100%; overflow-x: auto;">
+  <div id="commercial-dyno-table"></div>
+</div>
+<p style="text-align:center; font-style:italic; margin-top:10px;">
+  Figure 4: Comparison of commercial hub dynos’ prices.
+</p>
+
+
+
+
+<!-- ========================= -->
+<!--        2.2 MOTOR TYPES    -->
+<!-- ========================= -->
+<div id="motor-types">
+  <h3>2.2 Motor Types</h3>
+
+  <p>
+    In a hub dyno, the dyno’s motor is mounted to and rotated by the car’s wheel hub. The rotation generates 
+    voltage and current, which is translated to output the power and torque at various rpm.
+  </p>
+
+  <p>
+    Several types of electric motors were considered for the dyno’s motor, and Figure 5 highlights each motor’s 
+    advantages, disadvantages, and suitability for the FSAE EV.
+  </p>
+
+<!-- ========================= -->
+<!--    MOTOR TYPE TABLE       -->
+<!-- ========================= -->
+<table style="width:100%; border-collapse:collapse; font-size:14px;">
+  <thead>
+    <tr style="background:#e6e6e6; text-align:left;">
+      <th style="padding:10px; border:1px solid #ccc;">Motor Type</th>
+      <th style="padding:10px; border:1px solid #ccc;">Advantages</th>
+      <th style="padding:10px; border:1px solid #ccc;">Limitations</th>
+      <th style="padding:10px; border:1px solid #ccc;">Suitability</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr>
+      <td style="padding:10px; border:1px solid #ccc;">Brushed Direct Current</td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        • Simple.<br>
+        • Low cost.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">Low efficiency, high maintenance</td>
+      <td style="padding:10px; border:1px solid #ccc;">Limited to small-scale rigs</td>
+    </tr>
+
+    <tr>
+      <td style="padding:10px; border:1px solid #ccc;">Brushless Direct Current</td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        • Efficient.<br>
+        • Compact.<br>
+        • Low maintenance.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">Requires controller, moderate cost</td>
+      <td style="padding:10px; border:1px solid #ccc;">Suitable for mid-power dynos</td>
+    </tr>
+
+    <tr>
+      <td style="padding:10px; border:1px solid #ccc;">Radial Flux Permanent Magnet Synchronous Motor</td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        • Efficient,<br>
+        • High torque density,<br>
+        • Widely available.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">Expensive magnets, advanced control needed</td>
+      <td style="padding:10px; border:1px solid #ccc;">Standard choice for EV and dyno use</td>
+    </tr>
+
+    <!-- ======== GREEN HIGHLIGHT ROW ======== -->
+    <tr style="background:#c6e8a1;">
+      <td style="padding:10px; border:1px solid #ccc; font-weight:bold;">
+        Axial Flux Permanent Magnet Synchronous Motor
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        • Very high power density,<br>
+        • Compact.<br>
+        • Efficient cooling
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Higher cost, more complex mounting
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Compact, lightweight, and flat
+      </td>
+    </tr>
+    <!-- ===================================== -->
+
+    <tr>
+      <td style="padding:10px; border:1px solid #ccc;">Induction Motor</td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        • Rugged.<br>
+        • Inexpensive.<br>
+        • Able to withstand huge loads.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">Larger size, lower efficiency</td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Common in industrial dynos, less ideal for compact setups
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:10px; border:1px solid #ccc;">Switched Reluctance Motor</td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        • Rugged.<br>
+        • Magnet-free.<br>
+        • Capable of high-speed rotation.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        High noise, torque ripple, complex control
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">Limited research use</td>
+    </tr>
+
+    <tr>
+      <td style="padding:10px; border:1px solid #ccc;">Synchronous Reluctance Motor</td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        • Magnet-free.<br>
+        • Efficient at high speed
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Lower torque density, less commercial support
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">Emerging option, not yet practical</td>
+    </tr>
+
+  </tbody>
+</table>
+<p style="text-align:center; font-style:italic; margin-top:10px;">
+  Figure 5: Comparison of the different electric motor types
+</p>
+
+  <p>
+    Additionally, it is preferred that to use a motor that has 150% to 200% of the car’s maximum 
+    power to ensure safe operation of the dyno. Since one dyno will be mounted to on each of the rear wheels, the 
+    maximum power that one dyno experiences is half of the competition power limit (80kW) at 40kW. Therefore, an 80kW 
+    motor for the hub dyno is preferred to provide sufficient headroom and safety. Commercial three-phase 80 kW motors are expensive (US$300-400), big and heavy (about 150kg), and hence unable to fulfil the design criteria.
+  </p>
+
+  <p>
+    When sourcing for alternative motors and speaking with the FSAE team, we found that they have old spare EMRAX 228 
+    motors (Axial Flux) that are no longer in use. We decided to choose the EMRAX 228 as our dyno motor due to these 
+    reasons:
+  </p>
+
+  <ul>
+    <li>High power-to-weight ratio and flat design: Reduced rotational inertia.</li>
+    <li>Compact and lightweight: Suits the FSAE team’s need for portability and ease of storage in the workshop.</li>
+    <li>Bidirectional operation: Can serve as both motor and load generator.</li>
+    <li>Motor availability: Reduced cost.</li>
+  </ul>
+
+  <p>
+    Additionally, the EMRAX provides more than 200% of headroom (124kW) that a single dyno experiences from the 
+    FSAE EV. Therefore, we decided to proceed with the EMRAX 228 as the dyno’s motor, offering a compact, relatively 
+    lightweight, and safe motor for the dyno. Figure 6 highlights the size, weight and price difference of a commercial 
+    160kW motor and the EMRAX 228.
+  </p>
+
+<!-- ========================= -->
+<!--   MOTOR COMPARISON TABLE  -->
+<!-- ========================= -->
+
+<table style="width:100%; border-collapse:collapse; font-size:14px; margin-top:20px;">
+  <thead>
+    <tr style="background:#e6e6e6; text-align:left;">
+      <th style="padding:10px; border:1px solid #ccc;">Motor</th>
+      <th style="padding:10px; border:1px solid #ccc;">Dimensions</th>
+      <th style="padding:10px; border:1px solid #ccc;">Weight</th>
+      <th style="padding:10px; border:1px solid #ccc;">Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr>
+      <td style="padding:10px; border:1px solid #ccc;">80kW AC Electric Motor</td>
+      <td style="padding:10px; border:1px solid #ccc;">71cm × 37cm × 45cm</td>
+      <td style="padding:10px; border:1px solid #ccc;">162 kg</td>
+      <td style="padding:10px; border:1px solid #ccc;">US$300 – 400</td>
+    </tr>
+
+    <tr>
+      <td style="padding:10px; border:1px solid #ccc;">124 kW Emrax 228</td>
+      <td style="padding:10px; border:1px solid #ccc;">22.8 cm (diameter) × 12.10 cm</td>
+      <td style="padding:10px; border:1px solid #ccc;">13.5 kg</td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Free.<br>(Reuse from FSAE workshop)
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+<p style="text-align:center; font-style:italic; margin-top:10px;">
+  Figure 6: 160kW motor vs Emrax 228 motor
+</p>
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- 3. FRAME, MOUNTING, LAYOUT -->
+<!-- ========================= -->
+<div id="section-3">
+  <h2>3. Frame, Mounting, and Layout Design</h2>
+
+  <!-- ========================= -->
+  <!--       3.1 FRAME DESIGN     -->
+  <!-- ========================= -->
+  <div id="frame-design-criteria">
+    <h3>3.1 Frame Design Criteria</h3>
+
+    <p>
+      Based on our design criteria for the dyno, we further specify the dyno frame’s criteria and considerations as such:
+    </p>
+
+    <ul>
+      <li>Portable. (Easy to move around)</li>
+      <li>Compact. (Takes up minimal space)</li>
+      <li>Strong and stable. (Achieve a minimum Factor of Safety of 2)</li>
+      <li>Serviceability and manufacturability. (Detachable panels)</li>
+      <li>Modular design for future phases. (Electronic components)</li>
+    </ul>
+  </div>
+
+  <!-- ========================= -->
+  <!-- 3.2 FRAME CONCEPT DEV. -->
+  <!-- ========================= -->
+  <div id="frame-concept-development">
+    <h3>3.2 Frame Concept Development</h3>
+
+    <p>
+      Our frame concept focused on meeting the design criteria, stated in section 3.1, and several iterations were explored 
+      prior to our final frame design and component layout.
+    </p>
+
+    <!-- ===== 1ST ITERATION ===== -->
+    <h4>1st Iteration</h4>
+
+    <p>
+      Our first design incorporates the same cooling set-up as the FSAE EV, using two 120mm radiators with fans, a pump, 
+      and a reservoir. As we are using the same motor as the one in the car, the same cooling configuration would work 
+      for the dyno as well, since it has been tried and tested by the team. We sketched the different configurations of 
+      the radiator and fan layout and concluded that having one radiator on each side of the motor offered the best airflow 
+      and weight distribution. Figure 7 shows the sketch, as well as the pros and cons of each radiator position.
+    </p>
+
+    <!-- FIGURE 7 -->
+    <image-component
+      tag="fig7"
+      source="assets/figure7_radiator_layout.jpg"
+      subtitle = 
+    ></image-component>
+    <!-- ========================= -->
+    <!-- Radiator Placement Table  -->
+    <!-- ========================= -->
+<!-- ========================= -->
+<!--   RADIATOR PLACEMENT TABLE -->
+<!-- ========================= -->
+<table style="width:100%; border-collapse:collapse; font-size:14px;">
+  <thead>
+    <tr style="background:#e6e6e6; text-align:left;">
+      <th style="padding:10px; border:1px solid #ccc;">No.</th>
+      <th style="padding:10px; border:1px solid #ccc;">Placement</th>
+      <th style="padding:10px; border:1px solid #ccc;">Pros</th>
+      <th style="padding:10px; border:1px solid #ccc;">Cons</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr>
+      <td style="padding:10px; border:1px solid #ccc;">1</td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Both radiators are mounted below the motor.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Utilise the space below the motor.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Insufficient clearance.<br>
+        Less efficient cooling as hot air rises.
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:10px; border:1px solid #ccc;">2</td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Both radiators are mounted on 1 side of the motor.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Ease of running the cooling tubes.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Weight imbalance as the radiator is mounted outside of the frame.
+      </td>
+    </tr>
+
+    <!-- ======== GREEN HIGHLIGHT ROW ======== -->
+    <tr style="background:#c6e8a1;">
+      <td style="padding:10px; border:1px solid #ccc; font-weight:bold;">3</td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        A single radiator is mounted on each side of the motor.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Best airflow.<br>
+        Best weight balance.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        More complex cooling tube set-up.
+      </td>
+    </tr>
+    <!-- ===================================== -->
+
+    <tr>
+      <td style="padding:10px; border:1px solid #ccc;">4</td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Both radiators are mounted on top of the motor.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Most efficient cooling.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        The frame becomes too tall due to space clearance required, hence more likely to topple.
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+<p style="text-align:center; font-style:italic; margin-top:10px;">
+  Figure 7: Initial sketch for radiator layout
+</p>
+
+
+    
+    <p>
+      Additionally, we included 4 lockable caster wheels for portability and ease of set-up, while providing stability 
+      when locked during dyno runs. A small caster wheel dimension of 5cm was used to allow for the alignment of the motor 
+      and the vehicle’s wheel hub, as it is relatively low. We used a 25 cm by 25 cm base area to keep the dyno compact and 
+      accommodate the components, such as the motor, with a diameter of 22.8cm and a thickness of 12.1cm, and the 120mm 
+      radiator. 
+	</p>
+	<p>
+	  However, when building the CAD of our dyno’s frame, we found that there was insufficient clearance between 
+      the motor and the cooling components, leading to the motor and reservoir being mounted on the external face of the 
+      frame. This is not ideal as it causes the frame to be imbalanced and unstable, making it more prone to topple. The 
+      rotating motor is also exposed, increasing the safety risk of the operator or equipment touching the motor when 
+      rotating. Figure 8 is a CAD of our 1st iteration.
+    </p>
+
+    <!-- FIGURE 8 -->
+    <image-component
+      tag="fig8"
+      source="assets/figure8_iteration1.png"
+      subtitle="Figure 8: CAD of Dyno’s Frame (1st Iteration)"
+    ></image-component>
+
+    <!-- ===== 2ND ITERATION ===== -->
+    <h4>2nd Iteration</h4>
+
+    <p>
+      Our design expanded to a 35 cm by 35 cm by 35 cm box, with the motor mounted on the centre plate, which separates the 
+      motor and the cooling components to prevent potential short-circuit. Additionally, the increase the space allowed us 
+      to mount both the radiators internally on one side of the frame, minimising the weight imbalance while reducing the 
+      complexity of the cooling system’s tubing set-up. This iteration provided sufficient space for all components to be 
+      covered, ensuring safety during operation. 
+	</p>
+	<p>
+	  However, the design was a single-piece box, which was difficult and costly 
+      to manufacture. It also provided limited access to the components in the frame, making it difficult to service and 
+      repair these components, as well as to include electrical components in the next phase. Figure 9 is a CAD of our 
+      2nd iteration.
+    </p>
+
+    <!-- FIGURE 9 -->
+    <image-component
+      tag="fig9"
+      source="assets/figure9_iteration2.png"
+      subtitle="Figure 9: CAD of Dyno’s Frame (2nd Iteration)"
+    ></image-component>
+
+    <!-- ===== 3RD ITERATION ===== -->
+    <h4>3rd Iteration</h4>
+
+    <p>
+      The box’s dimensions and component layout were kept the same from the 2nd iteration, but included grooves on panels 
+      and slots on the mid-section part for easy assembly of the frame. However, the mid-section was sheet metal of 1cm 
+      thickness, hence might not withstand the force from the vehicle’s torque and weight. Additionally, the grooves and 
+      slots' detailed dimensions could increase manufacturing costs. Figure 10 is a CAD of our 3rd iteration.
+    </p>
+
+    <!-- FIGURE 10 -->
+    <image-component
+      tag="fig10"
+      source="assets/figure10_iteration3.png"
+      subtitle="Figure 10: CAD of Dyno’s Frame (3rd Iteration)"
+    ></image-component>
+
+    <!-- ===== 4TH ITERATION (FINAL) ===== -->
+    <h4>4th Iteration (Final)</h4>
+
+    <p>
+      Our final design uses a welded truss structure for the mid-section, providing strength to the centre plate to 
+      withstand the vehicle’s forces when mounted to the motor. Additionally, we decided to bolt on the side panels, 
+      allowing the operators to easily remove them for maintenance, repair and future electronic components in phase 2. 
+	</p>
+	<p>
+	  We used square tube weldment of 20 mm by 20 mm by 2 mm for the beams, and a 1 cm-thick centre plate with 16 mounting 
+      holes for the motor. Our final design ensures that the frame is portable, strong and safe, while incorporating a 
+      cooling system and motor mounting holes for its key components. Figure 11 is a CAD of our 4th and final iteration 
+      frame’s mid-section.
+    </p>
+    
+    <model-viewer
+    src="assets/frame.glb"
+    alt="Dyno Frame 3D Model"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    exposure="1.2"
+    ar
+    style="width: 100%; height: 500px; background: #f0f0f0; border-radius: 10px;">
+  </model-viewer>
+  
+  <p style="text-align:center; font-style:italic; margin-top:8px;">
+    Interactive 3D Model of Dyno Frame
+  </p>
+  
+    <!-- FIGURE 11 -->
+    <image-component
+      tag="fig11"
+      source="assets/figure11_iteration4.png"
+      subtitle="Figure 11: CAD of Dyno’s Frame (4th Iteration)"
+    ></image-component>
+
+  </div>
+</div>
+<!-- ========================= -->
+<!-- 3.3 MOUNT DESIGN CRITERIA -->
+<!-- ========================= -->
+<div id="mount-design-criteria">
+  <h3>3.3 Mount Design Criteria</h3>
+
+  <p>
+    Based on our design criteria for the dyno, we further specify the mount design’s criteria and considerations as such:
+  </p>
+
+  <ul>
+    <li>Rigid and well-aligned. (Maintain precise alignment between motor and flange under load)</li>
+    <li>Compact and accessible. (Allow sufficient clearance for tools and fasteners during assembly)</li>
+    <li>Strong and durable. (Withstand operational torque with a minimum Factor of Safety of 1.5)</li>
+    <li>Serviceable. (Enable easy removal and replacement of the motor and coupling)</li>
+  </ul>
+</div>
+
+<!-- ========================= -->
+<!--   3.4 MOUNT DEVELOPMENT  -->
+<!-- ========================= -->
+<div id="mount-concept-development">
+  <h3>3.4 Mount Concept Development</h3>
+
+  <!-- ===== 1ST ITERATION ===== -->
+  <h4>1st Iteration</h4>
+
+  <p>
+    To start off the design of connection, two connection methods between the wheel and the dyno motor were evaluated, 
+    including chassis dyno and mechanical rim clamps.
+  </p>
+
+  <!-- ========================= -->
+<!--   MOUNTING METHOD TABLE   -->
+<!-- ========================= -->
+
+<table style="width:100%; border-collapse:collapse; font-size:14px; margin-top:20px;">
+  <thead>
+    <tr style="background:#e6e6e6; text-align:left;">
+      <th style="padding:10px; border:1px solid #ccc;">Method</th>
+      <th style="padding:10px; border:1px solid #ccc;">Description</th>
+      <th style="padding:10px; border:1px solid #ccc;">Pros</th>
+      <th style="padding:10px; border:1px solid #ccc;">Cons</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Direct Rim Contact (Chassis Dyno)
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Motor/absorber drives a roller in contact with the tire surface.  
+        No rigid connection to the hub.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        • Very simple setup<br>
+        • No need to remove wheel
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        • Tire slip → inaccurate torque/power<br>
+        • Tire compliance & pressure variation affect results<br>
+        • Heat builds in tire<br>
+        • Safety guarding required
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Clamping to Rim (Mechanical Clamps / Lug Clamps)
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        Clamps grab the rim and transmit torque through friction.
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        • Wheel stays mounted<br>
+        • Faster changeover
+      </td>
+      <td style="padding:10px; border:1px solid #ccc;">
+        • Hard to guarantee concentricity<br>
+        • Limited torque capacity<br>
+        • Possible rim damage
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+<p style="text-align:center; font-style:italic; margin-top:10px;">
+  Figure 12: Comparison between two ways of mounting
+</p>
+
+  <p>
+    We first evaluated the most conventional chassis-dyno approach, in which the motor or absorber drives a roller in 
+    contact with the tire. Although this method is simple and does not require removing the wheel, it was quickly rejected 
+    because tire deformation introduces large measurement uncertainty. These effects significantly reduce repeatability 
+    and make it difficult to obtain accurate torque readings.
+  </p>
+
+  <!-- ===== 2ND ITERATION ===== -->
+  <h4>2nd Iteration</h4>
+
+  <p>
+    We next considered a rim-clamping configuration in which mechanical clamps attach directly to the rim to transmit 
+    torque, and proceeded to develop a CAD for the idea, as shown in Figure 13.
+  </p>
+
+  <!-- FIGURE 13 -->
+  <image-component
+    tag="fig13"
+    source="assets/figure13_mounting_iteration2.jpg"
+    subtitle="Figure 13: CAD of Mounting (2nd Iteration)"
+  ></image-component>
+
+  <p>
+    This concept initially appeared attractive because it would avoid removing the wheel and could allow quicker setup. 
+    However, further analysis showed that the clamping assembly would need to be large enough to envelop the rim profile, 
+    leading to packaging challenges and excessive overall size. The increased overhung mass shifts the center of gravity 
+    away from the frame, reducing rigidity and stability. The rim surface also lacks the structural engagement required 
+    for sustained drivetrain torque, raising the risk of rim deformation or damage. Due to these practical and safety 
+    concerns, the rim-clamp approach was eliminated.
+  </p>
+
+  <!-- ===== 3RD ITERATION ===== -->
+  <h4>3rd Iteration</h4>
+
+  <p>
+    After eliminating rim-driven and rim-clamping solutions, we developed a flange-based hub interface to replace the 
+    wheel assembly. The concept used the existing red wheel nuts and locating dowel pins to secure one side of the flange 
+    to the hub, providing a familiar and reliable attachment method. To transmit torque from the flange to the motor, we 
+    initially decided to use the existing shaft coupling. The existing motor sprocket was repurposed as an interface point, 
+    enabling the coupling to connect between the motor output and the flange.
+  </p>
+
+  <!-- FIGURE 14 -->
+  <image-component
+    tag="fig14"
+    source="assets/figure14_mounting_iteration3.png"
+    subtitle="Figure 14: CAD of Mounting (3rd Iteration)"
+  ></image-component>
+
+  <p>
+    However, it became clear that the coupling system became excessively large relative to the available space, adding 
+    unnecessary mass and complexity to the assembly. The increased length also raised concerns regarding bending stiffness 
+    and potential deflection under torque, which could compromise alignment and measurement accuracy. In addition, 
+    incorporating both a sprocket interface and a custom coupling created more components and tolerance stacks than 
+    necessary. Due to these issues, the design was reconsidered in favour of a more compact and rigid solution.
+  </p>
+
+  <!-- ===== 4TH ITERATION (FINAL) ===== -->
+  <h4>4th Iteration (Final)</h4>
+
+  <!-- Interactive Flange Model -->
+  <model-viewer
+  src="assets/flange.glb"
+  alt="Interactive Flange Model"
+  camera-controls
+  auto-rotate
+  ar
+  exposure="1.2"
+  shadow-intensity="1"
+  style="width: 100%; height: 500px; background-color: #eee;">
+</model-viewer>
+  <p style="text-align:center; font-style:italic; margin-top:8px;">
+    Interactive 3D Model of Flange
+  </p>
+
+  <!-- FIGURE 15 -->
+  <image-component
+    tag="fig15"
+    source="assets/figure15_mounting_iteration4.png"
+    subtitle="Figure 15: CAD of Mounting (4th Iteration)"
+  ></image-component>
+
+  <p>
+    The final design adopts a compact flange interface to directly connect the rear hub to the motor. The flange provides 
+    a rigid structural connection using the standard hub bolt pattern to ensure high torque capacity and consistent 
+    concentricity, eliminating slip and minimizing backlash compared to tire- or rim-based approaches. Sufficient clearance 
+    is kept for tools to access and tighten the original red nut on the hub. Hex bolts were selected instead of round-head 
+    fasteners due to the limited space around the flange, allowing conventional tools to be used during installation.
+  </p>
+
+  <p>
+    By integrating the motor connection into the same flange structure rather than relying on a separate coupling and 
+    reusing the bolt tightening structure of the rim, the overall assembly remains short, stiff, and mechanically simple. 
+    The design is also relatively easy to manufacture using standard machining methods. Overall, this configuration offers 
+    a balanced solution in accuracy, structural performance, packaging efficiency, and manufacturability, making it well 
+    suited for the FSAE hub-dynamometer system.
+  </p>
+</div>
+<!-- ================================ -->
+<!-- 3.5 FEA SIMULATION — FRAME -->
+<!-- ================================ -->
+<div id="fea-frame">
+  <h3>3.5 CAD Finite Element Analysis (FEA) Simulation Results (Frame)</h3>
+
+  <p>
+    We determined and calculated the 2 main forces acting on the frame: ¼ weight of the car, because the vehicle’s 
+    weight is even distributed among the 4 wheels, and the torque generated from the vehicle’s wheel hub during the 
+    dyno run. Figure 16 shows how the forces are calculated.
+  </p>
+
+  <!-- FIGURE 16 -->
+  <image-component
+    tag="fig16"
+    source="assets/figure16_force_calculation.png"
+    subtitle="Figure 16: Illustration of how the forces on the dyno’s frame are calculated"
+  ></image-component>
+
+  <p>
+    <strong>Total downward force</strong> = ¼ weight of the car + weight of the motor<br>
+	= (270 kg * 9.81 m/s²) * ¼ + (13.5 kg * 9.81 m/s²)<br>
+    = <strong>795 N</strong>.<br><br>
+    <strong>Max torque from the motor = 220 Nm.</strong>
+  </p>
+
+  <p>
+    We ran an FEA simulation by applying these 2 forces on the 16 motor mount holes of the frame’s centre plate. 
+    Other conditions applied to the simulation include:
+  </p>
+
+  <ul>
+    <li>Fixture of the 4 corners of the frame to the ground, simulating the stability provided by the locked caster wheels.</li>
+    <li>Beam using square tube weldment of 20 mm by 20 mm by 2 mm.</li>
+    <li>Beam material using AISI 1010 steel bar.</li>
+    <li>Centre plate of 1 cm thickness, with 16 motor mounting holes.</li>
+    <li>Centre plate material using 1020 steel.</li>
+  </ul>
+
+  <p>
+    The FEA simulation results showed that the Factor of Safety (FOS) was greater than 3, higher than the objective of 2 
+    as defined in the frame’s design criteria. Figure 17 shows the FEA results of the frame. Hence, we can conclude that 
+    the frame’s structure, given the materials and dimensions, is sufficiently strong to support the weight and torque 
+    that the dyno will experience in extreme cases.
+  </p>
+
+  <!-- FIGURE 17 -->
+  <image-component
+    tag="fig17"
+    source="assets/figure17_fea_view1.png"
+    subtitle="Figure 17: Dyno’s Frame FEA Result View 1"
+  ></image-component>
+
+  <!-- FIGURE 18 -->
+  <image-component
+    tag="fig18"
+    source="assets/figure18_fea_view2.png"
+    subtitle="Figure 18: Dyno’s Frame FEA Result View 2"
+  ></image-component>
+
+</div>
+<!-- ================================ -->
+<!-- 3.6 FEA SIMULATION — FLANGE -->
+<!-- ================================ -->
+<div id="fea-flange">
+  <h3>3.6 CAD FEA Simulation Results (Flange)</h3>
+
+  <!-- FIGURE 19 -->
+  <image-component
+    tag="fig19"
+    source="assets/figure19_flange_fea1.png"
+    subtitle="Figure 19: Flange FEA Result 1"
+  ></image-component>
+
+  <p>
+    We conducted an FEA simulation for Case 1 by fixing the flange to the motor side and applying a vertical load 
+    equivalent to one-quarter of the vehicle weight, along with a 220 N·m driving torque at the wheel face. The 
+    bolt–flange interfaces were modelled with global contact, and each bolt was preloaded with a 20 N·m tightening 
+    torque. The simulation, using AISI 1020 steel, showed that the highest stresses occurred around the bolt walls due to 
+    local bearing and contact effects, with a minimum Factor of Safety (FOS) of 1.8—above the target of 1.5. The 20 N·m 
+    preload provided adequate clamping force to prevent separation while maintaining a realistic, hand-tightened assembly 
+    condition. Figure 19 shows the FEA results of the flange under these loading conditions.
+  </p>
+
+  <p>
+    To improve the accuracy of the stress prediction in the flange assembly, the mesh element size was reduced progressively
+    to observe how the maximum von Mises stress and resulting factor of safety (FOS) changed.
+  </p>
+
+  <!-- ========== TABLE ========== -->
+  <table-component subtitle="Table: Mesh Size vs Stress & FOS">
+    <div id="mesh-table"></div>
+  </table-component>
+  
+  <!-- =========================== -->
+
+  <!-- FIGURE 20 -->
+  <p style="text-align:center; font-style:italic; margin-top:10px;">
+    Figure 20: Flange Max Stress VS Element Size Plot
+  </p>
+
+  <p>
+    This increase in stress with mesh refinement is expected because coarse meshes tend to under-resolve stress 
+    concentrations around bolt holes, leading to an artificially high FOS. At 1.0 mm, the stress decreased slightly to 
+    288.9 MPa (FOS ≈ 1.22). This small reduction suggests that the solution is approaching convergence: once the mesh 
+    becomes sufficiently fine, the peak stress no longer changes significantly between refinements. The minor drop from 
+    1.5 mm to 1.0 mm likely arises from local averaging and element shape effects, rather than a real physical reduction in 
+    stress. The stress-versus-element-size trend is plotted, and the curve shows that the results stabilise as the mesh 
+    becomes finer.
+  </p>
+
+  <p>
+    Because the highest stresses always appeared around the bolt contact region, the refined mesh is locally applied only 
+    in this critical area to reduce computation time while maintaining accuracy. Running a uniformly fine mesh was 
+    computationally expensive, so this targeted refinement allowed faster iteration. Under the converged mesh condition, 
+    the assembly did not satisfy the minimum safety factor of 1.5 when using AISI 1020 steel. The most effective 
+    modification was to change the flange material to AISI 1045, which increased the minimum FOS to approximately 1.6. 
+    Other potential improvements include adding hardened or larger-diameter washers to reduce local bearing stress, 
+    enlarging the bolt diameter, switching from hex to round-head bolts to improve load distribution, and increasing 
+    flange thickness or adding fillets to reduce stress concentrations.
+  </p>
+
+  <!-- FIGURE 21 -->
+  <image-component
+    tag="fig21"
+    source="assets/figure21_flange_fea2.png"
+    subtitle="Figure 21: Flange FEA Result"
+  ></image-component>
+
+  <p>
+    For Case 2 the FEA setup was mirrored so that the flange was fixed at the car side and only the 220 N·m driving torque 
+    was applied at the motor end (bolt preloads and global contact definitions were kept consistent with Case 1). Under 
+    this loading the model produced a minimum factor of safety of ≈6, well above the 1.5 target. It is important to note 
+    this scenario does not represent the true worst-case: we deliberately omitted the dyno’s own weight (and any cooling or 
+    ancillary components) because those masses are not yet defined, and, conceptually, the dyno should be the element 
+    taking the vehicle’s weight rather than the vehicle taking the dyno load.
+  </p>
+</div>
+<sl-divider></sl-divider>
+
+<!-- ========================= -->
+<!--      4. LIMITATIONS       -->
+<!-- ========================= -->
+<div id="limitations">
+  <h2>4. Limitations of our design:</h2>
+
+  <!-- 4.1 -->
+  <div id="limitation-4-1">
+    <h3>4.1 Lack of space for electrical components and limited electrical integration</h3>
+    <p>
+      The first limitation arises from the team’s limited electrical expertise. While we are primarily focused 
+      on the mechanical construction and cooling performance, the integration of electronics, such as motor 
+      controllers and data logging hardware has not been fully developed, hence we are unable 
+			to accurately estimate the space required for these electrical parts. However, our design reserved potential expansion 
+			space at the top or rear of the frame, hence further redesign can be required to accommodate proper cable routing.
+    </p>
+  </div>
+
+  <!-- 4.2 -->
+  <div id="limitation-4-2">
+    <h3>4.2 Lack of a counter-balance</h3>
+    <p>
+      Another limitation is the lack of a counter-balance or anchoring system to prevent the dyno from tipping under 
+      load. The current frame design is compact and optimized for portability, but this also reduces its footprint and 
+      the stability margin against overturning. The reaction torque from the motor during operation generates a 
+      moment that could lift or rotate the assembly, hence the need for 
+			a dedicated stabilizing structure or ballast system is necessary. 
+		</p>
+		<p>
+      However, the magnitude of the required torque resistance cannot be accurately determined at this stage, as 
+      CAD-based FEA is insufficient for predicting rigid-body tipping, which depends on mass distribution. Therefore, 
+      the assessment of tipping forces and the design of an appropriate counter-balance mechanism will be conducted
+			next semester, with the physical prototype and a more accurate mass properties.
+    </p>
+  </div>
+
+  <!-- 4.3 -->
+  <div id="limitation-4-3">
+    <h3>4.3 Manufacturing accuracy</h3>
+    <p>
+      Manufacturing accuracy of the motor-mounting plate is critical. If the machining tolerances of bolt circles and 
+      locating surfaces are not met, the motor may not align or may not even be mountable. This risk becomes more 
+      significant if the design is later expanded to support four wheels, where inconsistent plate geometry could lead 
+      to center-to-center misalignment, causing uneven loading between test stations. To mitigate these risks we can 
+      specify tighter dimensional tolerances on key interfaces like the bolt patterns. Additionally, fabricating a 
+      simple alignment jig or inspection fixture enables the plate geometry to be verified before installation.
+    </p>
+  </div>
+</div>
+<sl-divider></sl-divider>
+
+<!-- ========================= -->
+<!--     5. NEXT STEPS SEM II  -->
+<!-- ========================= -->
+<div id="next-steps-sem2">
+  <h2>5. Next Steps in Sem II:</h2>
+
+  <p>
+    Next semester, our focus will be more on testing and fabricating the current model, the components will be sent 
+    out to manufacture during the semester break.
+  </p>
+
+  <!-- FIGURE 22 -->
+  <image-component
+    tag="fig22"
+    source="assets/figure22_gantt_chart.png"
+    subtitle="Figure 22: Gantt Chart for Next Semester"
+  ></image-component>
+
+  <!-- TABLE TITLE -->
+  <h3>Detail Steps for Next Semester</h3>
+
+  <!-- TABLE (Grid.js) -->
+  <table-component subtitle="Table: Focus Area / Purpose / Actions">
+    <div id="next-steps-table"></div>
+  </table-component>
+</div>
+<sl-divider></sl-divider>
+
+<!-- ========================= -->
+<!-- 6. ADDITIONAL DESIGN ELEMENTS -->
+<!-- ========================= -->
+<div id="additional-design-elements">
+  <h2>6. Additional Design Elements</h2>
+
+  <div id="cooling-selection">
+    <h3>6.1 Cooling Selection</h3>
+
+    <p>
+      The EMRAX 228 motor used in the dynamometer supports three cooling configurations: air cooling,
+      liquid cooling, and combined cooling. According to the manufacturer datasheet, the liquid-cooled
+      configuration requires a minimum coolant flow rate of 6 L/min, with a maximum coolant temperature
+      of 50 °C and ambient temperature not exceeding 30 °C. The datasheet also states that the motor can
+      achieve up to 96% efficiency, although the actual performance depends on the motor configuration,
+      drive cycle, controller capability, and thermal boundary conditions.
+    </p>
+
+    <p>
+      For the present dynamometer design, liquid cooling was selected as the most suitable approach.
+      Compared with normal vehicle operation, the dyno may subject the motor to relatively high and
+      sustained loading during testing, which can lead to greater thermal accumulation. Air cooling is
+      mechanically simpler, but its heat removal capability is lower and relies strongly on sufficient
+      airflow around the motor. Combined cooling offers the highest cooling capability, but it also
+      increases system complexity and was considered unnecessary for the current prototype. Liquid cooling
+      therefore provides a practical balance between thermal performance and implementation complexity.
+    </p>
+
+    <p>
+      To meet these requirements, a compact external liquid-cooling module was selected. The unit
+      integrates a radiator, dual cooling fans, coolant reservoir, and circulation pump in a single
+      assembly. The radiator adopts a 240 mm dual-fan configuration, which provides sufficient heat
+      dissipation capacity while remaining compact enough to fit within the dynamometer frame.
+    </p>
+
+    <p>
+      The selected cooling module offers several practical advantages for integration into the dyno
+      system. The integrated pump includes an adjustable flow control, allowing the coolant flow rate to
+      be tuned depending on the operating conditions. The radiator also uses standard fan mounting holes,
+      which enables straightforward attachment to the aluminum side panels of the frame without requiring
+      custom brackets. In addition, the integrated reservoir-pump-radiator layout reduces the number of
+      hose connections, simplifying installation and lowering the risk of leakage. The pump operates at
+      12 V and approximately 15 W, allowing it to be powered easily using a standard DC supply.
+    </p>
+
+    <p>
+      Although the datasheet provides the required coolant flow rate, it does not directly specify the
+      exact heat rejection requirement for the dynamometer operating condition. In principle, the heat
+      generated by the motor can be estimated from the power loss:
+    </p>
+
+    <p style="text-align:center; font-style:italic;">
+      Q = P<sub>out</sub>(1/η - 1), where P<sub>out</sub> = Tω
+    </p>
+
+    <p>
+      This indicates that the thermal load depends on the operating torque, rotational speed, and motor
+      efficiency. However, since the efficiency varies with operating point and the datasheet does not
+      provide a complete loss or efficiency map for the specific dynamometer duty cycle, the exact heat
+      generation cannot be determined with confidence from the available data alone. As a result, the
+      cooling system was selected using a specification-based design approach, where the manufacturer’s
+      liquid-cooling requirements were taken as the primary design guideline.
+    </p>
+
+    <p>
+      In addition, the same EMRAX 228 motor has already been used by the FSAE team with liquid cooling in
+      the vehicle, which can sustain the high heat load generated during the whole race, providing
+      practical confidence that this cooling method is appropriate. Our dyno condition is under aircon,
+      which is cooler than the outdoor race condition.
+    </p>
+  </div>
+
+  <div id="balancing-beam-extension">
+    <h3>6.2 Balancing Beam Extension</h3>
+
+    <image-component
+      tag="fig24"
+      source="assets/figure24_extension_beam.png"
+      subtitle="Figure 24: Extension Beam Calculation"
+      img-style="transform: rotate(180deg);"
+    ></image-component>
+
+    <p>
+      We conducted an additional moment analysis to assess if the frame’s (including the ¼ of the car and
+      motor) weight and dimensions were sufficient to resist flipping over when peak torque is applied
+      from the wheel hub. We took a factor of safety of 1.5 for both calculations, with the maximum
+      torque being 330 Nm. As shown in Figure 24, the analysis considered two cases, one with and without
+      a beam extension of length <em>b</em> protruding from the base.
+    </p>
+
+    <p>
+      Without any extension (<em>b</em> = 0) as was designed in Semester 1, the upward force from the
+      torque was calculated and will exceed the downward gravitational force, hence the structure will
+      topple forward under the applied torque.
+    </p>
+
+    <p>
+      In the other case, a beam extension of about 24 cm was determined to be the minimum length required
+      to keep it in equilibrium to prevent tipping under the design load.
+    </p>
+
+    <p>
+      To create this extension without additional fabrication, we chose to use a T-slot aluminium beam.
+      These can be fitted with standard T-slot nuts in their internal channels, allowing the beam to be
+      bolted to the bottom aluminium panel through predrilled holes without welding or custom brackets,
+      while providing length adjustability. This makes the beam a plug-and-play component that can be
+      installed, repositioned, or removed.
+    </p>
+  </div>
+</div>
+<sl-divider></sl-divider>
+
+<!-- ========================= -->
+<!-- 7. MANUFACTURING AND ASSEMBLY -->
+<!-- ========================= -->
+<div id="manufacturing-assembly">
+  <h2>7. Manufacturing and Assembly</h2>
+
+  <p>
+    To ensure the dimensional accuracy and structural integrity required for a dynamometer application,
+    the frame assembly was outsourced to Axis Synergy, an external vendor with the machining and welding
+    capabilities needed to consistently meet tolerances that in-house fabrication would struggle to
+    achieve in a short time. Despite an estimated completion date that originally provided some buffer,
+    fabrication was delayed by holidays and vendor scheduling. This shortened the available experimental
+    window and required overtime after the parts arrived in order to collect data and meet the project
+    deadline.
+  </p>
+
+  <div id="frame-truss-material">
+    <h3>7.1 Frame Truss Structure Material</h3>
+    <p>
+      The welded truss frame, where the motor is bolted onto, is fabricated from AISI 1010 mild steel.
+      1010 steel was selected because it is strong, weldable, and relatively cost-effective. Since the
+      dynamometer must withstand both one quarter of the car’s weight plus the motor, roughly 790 N, and
+      a maximum torque of 220 Nm from the vehicle, a welded steel truss structure provides the rigidity
+      required by the earlier simulations.
+    </p>
+    <p>
+      AISI 1010’s low carbon content also makes it suitable for MIG or TIG welding with low risk of
+      heat-affected-zone cracking. The truss steel beams are welded at each node, and the motor mounting
+      face is welded to the middle beams using intermittent or stitch welds to reduce plate warping.
+      Holes were also drilled into the truss edges to accommodate M6 or M8 rivet nuts for panel
+      attachment.
+    </p>
+    <p>
+      The truss configuration distributes load efficiently across the structure, reducing localised stress
+      concentrations that could cause fatigue failure over repeated test cycles.
+    </p>
+  </div>
+
+  <div id="side-panel-material">
+    <h3>7.2 Side Panel Material</h3>
+    <p>
+      The six surrounding panels are made of aluminium sheet. Since the dyno is still in an early phase
+      of development, the frame must remain modular and easy to modify for future sensors, electronics,
+      and mounting brackets. Aluminium sheets can be drilled or cut easily using standard workshop tools,
+      allowing the frame to evolve without re-fabricating the entire assembly.
+    </p>
+
+    <p>We compared steel sheet, aluminium sheet, and acrylic sheet for the panel material.</p>
+
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <thead>
+        <tr style="background:#e6e6e6; text-align:left;">
+          <th style="padding:10px; border:1px solid #ccc;">Properties / Materials</th>
+          <th style="padding:10px; border:1px solid #ccc;">Steel Sheet</th>
+          <th style="padding:10px; border:1px solid #ccc;">Aluminium Sheet</th>
+          <th style="padding:10px; border:1px solid #ccc;">Acrylic Sheet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:10px; border:1px solid #ccc;">Strength</td>
+          <td style="padding:10px; border:1px solid #ccc;">High</td>
+          <td style="padding:10px; border:1px solid #ccc;">Moderate</td>
+          <td style="padding:10px; border:1px solid #ccc;">Low</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #ccc;">Weight</td>
+          <td style="padding:10px; border:1px solid #ccc;">High</td>
+          <td style="padding:10px; border:1px solid #ccc;">Low</td>
+          <td style="padding:10px; border:1px solid #ccc;">Low</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #ccc;">Ease of modification</td>
+          <td style="padding:10px; border:1px solid #ccc;">Moderate (requires specialised tools)</td>
+          <td style="padding:10px; border:1px solid #ccc;">High (standard drill/saw)</td>
+          <td style="padding:10px; border:1px solid #ccc;">High (standard drill/saw)</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #ccc;">Corrosion resistance</td>
+          <td style="padding:10px; border:1px solid #ccc;">Low (requires coating)</td>
+          <td style="padding:10px; border:1px solid #ccc;">High (natural oxide layer)</td>
+          <td style="padding:10px; border:1px solid #ccc;">High</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #ccc;">Cost</td>
+          <td style="padding:10px; border:1px solid #ccc;">Moderate</td>
+          <td style="padding:10px; border:1px solid #ccc;">Moderate</td>
+          <td style="padding:10px; border:1px solid #ccc;">Low</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #ccc;">Suitability for panel use</td>
+          <td style="padding:10px; border:1px solid #ccc;">Moderate</td>
+          <td style="padding:10px; border:1px solid #ccc;">High</td>
+          <td style="padding:10px; border:1px solid #ccc;">Low</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="text-align:center; font-style:italic; margin-top:10px;">
+      Figure 25: Panel Comparison Table
+    </p>
+
+    <p>
+      We eliminated steel sheets mainly because of their weight and the difficulty of modifying, such as
+      drilling and cutting, compared to the other options. Acrylic offered the benefit of low cost and
+      ease of modification, but its low structural strength makes it brittle and likely to crack around
+      fastener holes or under pressure, making it unreliable for panels with regular assembly cycles.
+      Aluminium was our best option, as it is light, corrosion-resistant, and easy to modify. As the
+      panels are not primary load-bearing elements, the lower strength will not affect the overall dyno
+      strength.
+    </p>
+  </div>
+
+  <div id="panel-truss-assembly">
+    <h3>7.3 Panel-Truss Assembly</h3>
+    <p>
+      The panels are bolted to the truss structure using rivet nuts instead of conventional through-bolts
+      and the typical loose bolts and nuts. The 2 alternatives were considered before arriving at this
+      decision.
+    </p>
+    <p>
+      The first alternative was to drill and tap threads directly into the steel truss tubes. While this
+      avoids additional hardware (i.e. rivet nut), the steel tubing wall of the truss is too thin to
+      accommodate sufficient thread engagement length. Shallow threads in thin-walled tubing are prone to
+      stripping under repeated assembly cycles, which are expected over the dyno’s service life, making
+      this unsuitable.
+    </p>
+    <p>
+      The second alternative was a conventional bolt-and-nut arrangement, where bolts pass through the
+      panel and the truss structure’s steel tube and are tightened against a loose nut on the inner face.
+      The main issue is the limited interior access required to hold the nut, especially during the final
+      panel installation when the interior is fully enclosed. Furthermore, clamping directly against the
+      thin-walled tubing risks deformation. A spacer could distribute the clamping load, but the
+      clearance within the truss is insufficient.
+    </p>
+    <p>
+      Therefore, we decided to use rivet nuts. They are installed into pre-drilled holes on the truss
+      tubing, creating a permanent threaded insert to allow tightening of screws directly from the outer
+      face of the panel. The rivet nut also distributes the clamping load over a larger area than using
+      nuts, eliminating the risk of deformation.
+    </p>
+    <p>
+      During assembly, we noticed some misalignment between the rivet nuts on the truss and the
+      corresponding holes on the panels. This introduced an error stack-up that prevented the screws from
+      engaging the rivet nuts properly and prevented the panels from being fastened. This was resolved by
+      enlarging the panel holes by 5mm for additional tolerance, which enabled us to fasten all panels to
+      the truss structure. This could have been prevented with proper Geometric Dimensioning and Tolerance
+      (GD&amp;T) in our design and drawing, accounting for the tolerances of both the rivet nuts and panel
+      holes, so the screws would fit. Future iterations and fabrication should include tolerancing when
+      designing fastening holes to minimise the need for post-fabrication work.
+    </p>
+  </div>
+
+  <div id="mobility-positioning">
+    <h3>7.4 Mobility and Positioning</h3>
+    <p>
+      The dyno is expected to be very heavy, with the motor weighing at 13 kg, combined with the steel
+      truss structure, panels, and other components, such as the cooling system, and electronics in
+      future, contributes significantly to the weight. Our key design consideration was to ensure that
+      the dyno motor mounting hole aligns with the wheel hub so that it can be joined accurately, using
+      the flange, while remaining portable in the FSAE workshop due to limited space. We evaluated 3
+      options to increase the dyno’s height, as summarisd in Figure 26.
+    </p>
+
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <thead>
+        <tr style="background:#e6e6e6; text-align:left;">
+          <th style="padding:10px; border:1px solid #ccc;">Criteria</th>
+          <th style="padding:10px; border:1px solid #ccc;">Static Legs</th>
+          <th style="padding:10px; border:1px solid #ccc;">Locking Caster Wheels</th>
+          <th style="padding:10px; border:1px solid #ccc;">Adjustable-Leg Caster Wheels</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:10px; border:1px solid #ccc;">Portability</td>
+          <td style="padding:10px; border:1px solid #ccc;">Poor (Need to be lifted)</td>
+          <td style="padding:10px; border:1px solid #ccc;">Good</td>
+          <td style="padding:10px; border:1px solid #ccc;">Good</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #ccc;">Height adjustability</td>
+          <td style="padding:10px; border:1px solid #ccc;">No</td>
+          <td style="padding:10px; border:1px solid #ccc;">No</td>
+          <td style="padding:10px; border:1px solid #ccc;">Yes</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #ccc;">Tilt adjustability</td>
+          <td style="padding:10px; border:1px solid #ccc;">No</td>
+          <td style="padding:10px; border:1px solid #ccc;">No</td>
+          <td style="padding:10px; border:1px solid #ccc;">Yes</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #ccc;">Load distribution on uneven floors</td>
+          <td style="padding:10px; border:1px solid #ccc;">Unequal</td>
+          <td style="padding:10px; border:1px solid #ccc;">Unequal</td>
+          <td style="padding:10px; border:1px solid #ccc;">Equal (adjustable by each leg)</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #ccc;">Stability during testing</td>
+          <td style="padding:10px; border:1px solid #ccc;">High (Difficult to move)</td>
+          <td style="padding:10px; border:1px solid #ccc;">High (Locked position)</td>
+          <td style="padding:10px; border:1px solid #ccc;">High (Legs to take the load)</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #ccc;">Cost</td>
+          <td style="padding:10px; border:1px solid #ccc;">Low</td>
+          <td style="padding:10px; border:1px solid #ccc;">Moderate</td>
+          <td style="padding:10px; border:1px solid #ccc;">Higher than lockable caster wheels</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="max-width:520px; margin:20px auto 0;">
+      <image-component
+        tag="fig26"
+        source="assets/figure26_adjustable_leg.png"
+        subtitle="Figure 26: Adjustable leg with caster wheel"
+        img-style="width:100%; max-height:260px; object-fit:contain;"
+      ></image-component>
+    </div>
+
+    <p>
+      Even though static legs were the most cost-effective, they were not selected as they limit the
+      dyno’s portability and adjustability, making them unsuitable for our design criteria.
+    </p>
+
+    <p>
+      We initially considered using a lockable caster wheel, with each wheel having a braking mechanism to
+      lock the swivel in place. While they are common and relatively cost-effective, there are 2
+      limitations. First, the frame is fixed at a specific height and angle, making it difficult to align
+      the dyno’s flange with the car's wheel hub, especially due to the FSAE car's camber. Forcing
+      alignment without adjustment would introduce lateral or angular loads at the hub interface, risking
+      damage to the dyno or the car’s drivetrain. Second, the FSAE workshop floor is not perfectly flat,
+      hence fixed-height locking casters can lead to unequal load distribution across the 4 wheels. Under
+      high torque, the uneven load introduces a bias into the support reactions, affecting the measurement
+      and could increase the risk of tipping under load.
+    </p>
+
+    <p>
+      Our final design decision was the adjustable leg caster wheel, as shown in Figure 25. They allow
+      for height and tilt adjustments to ensure proper alignment of the dyno’s flange and the car’s wheel
+      hub, accommodating both the car’s camber and the floor’s unevenness.
+    </p>
+  </div>
+
+  <div id="flange-manufacturing">
+    <h3>7.5 Flange</h3>
+    <p>
+      The flange is a relatively simple component compared to the frame and is manufactured using CNC
+      machining. It consists of a circular plate with two bolt patterns, one for the vehicle hub and one
+      for the dynamometer motor. As the main torque transmission interface, maintaining concentricity
+      between the bolt circles and central bore is critical to ensure alignment and minimise vibration.
+      CNC machining was selected for its high accuracy and repeatability.
+    </p>
+    <p>
+      Compared to casting or welded fabrication, CNC machining offers better geometric precision and
+      avoids distortion from multi-part assembly, which is crucial for rotating components where small
+      errors can cause imbalance. The flange’s symmetric geometry also allows it to be machined from a
+      single steel plate, simplifying manufacturing.
+    </p>
+    <p>
+      However, during assembly, a practical deviation from the ideal CAD geometry was observed. Although
+      the flange dowel holes were initially designed based on the nominal positions of the hub dowel pins,
+      the dowels on the actual FSAE vehicle were found to be slightly tilted due to long-term usage and
+      wear. This caused interference during installation, preventing the flange from seating properly.
+    </p>
+    <p>
+      To accommodate this, only the dowel holes on the flange were slightly enlarged to provide
+      sufficient clearance for the misaligned dowels. The bolt holes were not modified and continue to
+      maintain their intended fit to ensure proper clamping force and torque transmission. In this
+      configuration, the dowels primarily assist with alignment, while the bolts remain the main
+      load-carrying elements.
+    </p>
+    <p>
+      From a GD&amp;T perspective, this reflects a design where the central bore acts as the primary datum
+      for concentricity control, while the dowel holes are assigned a larger positional tolerance to
+      allow assembly under real-world conditions. This prevents unwanted constraint or forced misalignment
+      that could otherwise introduce stress or eccentricity into the system.
+    </p>
+
+    <div style="max-width:560px; margin:20px auto 0;">
+      <image-component
+        tag="fig27"
+        source="assets/figure27_flange_interface.png"
+        subtitle="Figure 27: Our flange interface with the dyno motor and wheel hub"
+        img-style="width:100%; max-height:300px; object-fit:contain;"
+      ></image-component>
+    </div>
+  </div>
+
+  <div id="cooling-mount">
+    <h3>7.6 Cooling Mount</h3>
+    <p>
+      As the cooling module consists of a radiator, dual fans, a pump, and a reservoir in a compact
+      assembly, as shown in Figure 28, its placement had to ensure sufficient clearance while not
+      interfering with other components such as the motor and mounting flange.
+    </p>
+
+    <p>
+      One key consideration was airflow effectiveness. The radiator relies on forced convection from the
+      dual fans, and therefore requires unobstructed air intake and exhaust paths. To address this, the
+      cooling module was mounted on the side panel of the frame, allowing ambient air to be drawn from
+      outside the enclosure and expelled efficiently. Mounting the radiator internally without proper
+      ventilation would reduce cooling performance due to recirculation of hot air.
+    </p>
+
+    <p>
+      Another issue encountered during assembly was related to mounting constraints. The initial design
+      intended for the radiator to face outward, with the fans mounted internally. However, the radiator
+      mounting holes required specific screws with a longer engagement length, which were not readily
+      available. Due to the lack of suitable fasteners, this configuration was not feasible during
+      assembly.
+    </p>
+
+    <p>
+      As a result, the orientation was revised such that the cooling fans were mounted facing outward,
+      while the radiator was positioned internally, as shown in Figure 29. To accommodate this change
+      and reduce the required screw length, the external fan casing was partially removed, allowing the
+      use of shorter standard screws for secure mounting.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; align-items:start;">
+      <image-component
+        tag="fig28"
+        source="assets/figure28_cooling_setup.jpg"
+        subtitle="Figure 28: Cooling system set-up (fan, radiator, pump, and reservoir)"
+      ></image-component>
+      <image-component
+        tag="fig29"
+        source="assets/figure29_cooling_mounted.png"
+        subtitle="Figure 29: Cooling set-up mounted onto our side panel"
+      ></image-component>
+    </div>
+
+    <p>
+      Although this modification altered the original airflow configuration, it does not significantly
+      affect the cooling effectiveness. This is because the opposing side panel of the frame is designed
+      with ventilation openings, allowing sufficient airflow to pass through the radiator. The dual fans
+      continue to provide forced convection across the radiator surface, maintaining adequate heat
+      dissipation. Therefore, the overall thermal performance remains acceptable for the intended
+      operating conditions.
+    </p>
+  </div>
+</div>
+<sl-divider></sl-divider>
+
+<!-- ========================= -->
+<!-- 8. TESTING -->
+<!-- ========================= -->
+<div id="testing">
+  <h2>8. Testing</h2>
+
+  <p>
+    Structural testing was conducted on the frame assembly to ensure that it can withstand the design
+    torque of 220 Nm without deformation, cracking, or tipping. In a controlled workshop setting, we
+    simulated the motor's maximum torque output. We used a static-moment setup by adding a load at a
+    known distance from the motor mounting, reproducing the bending moment which the frame experiences in
+    a dyno run.
+  </p>
+  <p>
+    The torque was simulated using a 0.5 m T-slot aluminium beam bolted to 2 of the motor mounting holes
+    on the frame using T-slot nuts, similar to the counterbalance beam extension described in Section
+    6.2. A scale and a clamp were used to exert the downward force at the end of the beam to achieve 220
+    Nm incrementally. This setup is simple, repeatable, and does not require specialised equipment beyond
+    what is available in the FSAE workshop.
+  </p>
+
+  <div id="frame-structural-integrity-test">
+    <h3>8.1 Frame Structural Integrity Test</h3>
+
+    <p>
+      The objective was to assess if the frame could sustain the applied moment without structural
+      failure. The frame is clamped firmly to the workbench, eliminating the possibility of tipping and
+      isolating the frame's structural response from its stability. A 0.5m and a maximum downward force
+      of 45kg were used to simulate the 220 Nm as described in the above section, as shown in Figures 30
+      and 31.
+    </p>
+
+    <p>
+      To capture quantitative deformation data, dial gauges are mounted at the highest-stress locations
+      identified in the FEA simulation in Section 3.5. The dial gauges record deflection at each load
+      increment, providing deformation data that can be compared with the FEA simulation. We hypothesise
+      that the physical deformation will slightly exceed the FEA results due to weld geometry
+      imperfections, fabrication-related residual stresses, and minor joint compliance not captured in the
+      simulation model.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; align-items:start;">
+      <image-component
+        tag="fig30"
+        source="assets/figure30_annotated.jpg"
+        subtitle="Figure 30: Structural Integrity Experimental Set-up Angle 1"
+      ></image-component>
+      <image-component
+        tag="fig31"
+        source="assets/figure31_annotated.jpg"
+        subtitle="Figure 31: Structural Integrity Experimental Set-up Angle 2"
+      ></image-component>
+    </div>
+
+    <p><strong>Procedure:</strong></p>
+    <ul>
+      <li>Install the T-slot beam onto the motor mounting holes and place a clamp (with scale between the clamp and the beam) at the end of the beam.</li>
+      <li>Mount dial gauges at FEA-identified high-stress points (DG3 and DG4). Zero all gauges before loading.</li>
+      <li>Apply downward force incrementally in steps as defined in Figure 32, recording dial gauge readings at each step until the maximum torque is achieved (220Nm).</li>
+      <li>Remove weights incrementally in the same steps, recording dial gauge readings during unloading.</li>
+      <li>After full unloading, inspect the frame for cracks, weld failures, panel buckling, and permanent deformation.</li>
+    </ul>
+
+    <p>
+      The loading and unloading phases are both recorded to assess whether the structure returns to its
+      original geometry after the load is removed, confirming elastic behaviour under the design load.
+      The dial gauges were positioned based on the deformation pattern predicted by the FEA results
+      (Figure 17). Dial Gauge 4 was placed at the location of maximum predicted deformation to capture
+      the peak structural response of the frame. Dial Gauge 3 was positioned on the opposite side of the
+      frame to monitor symmetry and detect any potential torsional or uneven deformation behaviour. Dial
+      Gauges 1 and 2 were mounted on the moment arm to track the beam’s displacement and ensure
+      consistency of load transfer.
+    </p>
+
+    <p>
+      To improve measurement reliability, the experiment was repeated three times under identical
+      conditions, and the results presented in Figure 32 represent the average values of the recorded
+      data.
+    </p>
+
+    <div style="width:100%; overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:920px;">
+        <thead>
+          <tr style="background:#e6e6e6; text-align:left;">
+            <th style="padding:8px; border:1px solid #ccc;">Step</th>
+            <th style="padding:8px; border:1px solid #ccc;">Beam Length (m)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Weight Added (kg)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Equivalent Moment (Nm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">DG1 at Beam (mm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">DG2 at Beam (mm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">DG3 at Frame (mm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">DG4 at Frame (mm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Phase</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:8px; border:1px solid #ccc;">1</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">0</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">Rest</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">2</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">10</td><td style="padding:8px; border:1px solid #ccc;">49.05</td><td style="padding:8px; border:1px solid #ccc;">0.47</td><td style="padding:8px; border:1px solid #ccc;">-0.04</td><td style="padding:8px; border:1px solid #ccc;">-0.02</td><td style="padding:8px; border:1px solid #ccc;">0.03</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">3</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">20</td><td style="padding:8px; border:1px solid #ccc;">98.10</td><td style="padding:8px; border:1px solid #ccc;">0.87</td><td style="padding:8px; border:1px solid #ccc;">-0.09</td><td style="padding:8px; border:1px solid #ccc;">-0.03</td><td style="padding:8px; border:1px solid #ccc;">0.05</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">4</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">30</td><td style="padding:8px; border:1px solid #ccc;">147.15</td><td style="padding:8px; border:1px solid #ccc;">1.24</td><td style="padding:8px; border:1px solid #ccc;">-0.13</td><td style="padding:8px; border:1px solid #ccc;">-0.05</td><td style="padding:8px; border:1px solid #ccc;">0.07</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">5</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">40</td><td style="padding:8px; border:1px solid #ccc;">196.20</td><td style="padding:8px; border:1px solid #ccc;">1.61</td><td style="padding:8px; border:1px solid #ccc;">-0.17</td><td style="padding:8px; border:1px solid #ccc;">-0.06</td><td style="padding:8px; border:1px solid #ccc;">0.09</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">6</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">45</td><td style="padding:8px; border:1px solid #ccc;">220.73</td><td style="padding:8px; border:1px solid #ccc;">1.80</td><td style="padding:8px; border:1px solid #ccc;">-0.20</td><td style="padding:8px; border:1px solid #ccc;">-0.07</td><td style="padding:8px; border:1px solid #ccc;">0.10</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">7</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">40</td><td style="padding:8px; border:1px solid #ccc;">196.20</td><td style="padding:8px; border:1px solid #ccc;">1.64</td><td style="padding:8px; border:1px solid #ccc;">-0.19</td><td style="padding:8px; border:1px solid #ccc;">-0.07</td><td style="padding:8px; border:1px solid #ccc;">0.09</td><td style="padding:8px; border:1px solid #ccc;">Unloading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">8</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">30</td><td style="padding:8px; border:1px solid #ccc;">147.15</td><td style="padding:8px; border:1px solid #ccc;">1.34</td><td style="padding:8px; border:1px solid #ccc;">-0.15</td><td style="padding:8px; border:1px solid #ccc;">-0.06</td><td style="padding:8px; border:1px solid #ccc;">0.08</td><td style="padding:8px; border:1px solid #ccc;">Unloading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">9</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">20</td><td style="padding:8px; border:1px solid #ccc;">98.10</td><td style="padding:8px; border:1px solid #ccc;">0.97</td><td style="padding:8px; border:1px solid #ccc;">-0.11</td><td style="padding:8px; border:1px solid #ccc;">-0.05</td><td style="padding:8px; border:1px solid #ccc;">0.06</td><td style="padding:8px; border:1px solid #ccc;">Unloading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">10</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">10</td><td style="padding:8px; border:1px solid #ccc;">49.05</td><td style="padding:8px; border:1px solid #ccc;">0.55</td><td style="padding:8px; border:1px solid #ccc;">-0.06</td><td style="padding:8px; border:1px solid #ccc;">-0.03</td><td style="padding:8px; border:1px solid #ccc;">0.04</td><td style="padding:8px; border:1px solid #ccc;">Unloading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">11</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">0</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.06</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.01</td><td style="padding:8px; border:1px solid #ccc;">Rest</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center; font-style:italic; margin-top:10px;">
+      Figure 32: Structural Integrity Test: Load-Deflection Average Data
+    </p>
+
+    <p>
+      No visible deformation on the frame was observed. The DG3 and DG4 readings show that only minimal
+      deformation occurred near the monitored frame edges, supporting the conclusion that the welded steel
+      truss and motor plate are strong enough to withstand the expected maximum torque from the FSAE car.
+    </p>
+
+    <div style="width:100%; overflow-x:auto; margin-top:20px;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:1280px;">
+        <thead>
+          <tr style="background:#e6e6e6; text-align:left;">
+            <th style="padding:8px; border:1px solid #ccc;">Moment (Nm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Simulation Max Deflection w/ Downward Force (mm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Simulation Max Deflection w/o Downward Force (mm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Simulation DG3 Max Deflection w/o Downward Force (mm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Dial Gauge 3 Deflection (mm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Percentage Error (DG3)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Simulation DG4 Max Deflection w/o Downward Force (mm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Dial Gauge 4 Deflection (mm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Percentage Error (DG4)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.0350</td><td style="padding:8px; border:1px solid #ccc;">0.0000</td><td style="padding:8px; border:1px solid #ccc;">0.00000</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.00000</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.00</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">49.05</td><td style="padding:8px; border:1px solid #ccc;">0.0468</td><td style="padding:8px; border:1px solid #ccc;">0.0209</td><td style="padding:8px; border:1px solid #ccc;">0.02088</td><td style="padding:8px; border:1px solid #ccc;">0.02</td><td style="padding:8px; border:1px solid #ccc;">-20.18</td><td style="padding:8px; border:1px solid #ccc;">0.02085</td><td style="padding:8px; border:1px solid #ccc;">0.03</td><td style="padding:8px; border:1px solid #ccc;">43.88</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">98.10</td><td style="padding:8px; border:1px solid #ccc;">0.0642</td><td style="padding:8px; border:1px solid #ccc;">0.0419</td><td style="padding:8px; border:1px solid #ccc;">0.04176</td><td style="padding:8px; border:1px solid #ccc;">0.03</td><td style="padding:8px; border:1px solid #ccc;">-20.18</td><td style="padding:8px; border:1px solid #ccc;">0.04170</td><td style="padding:8px; border:1px solid #ccc;">0.05</td><td style="padding:8px; border:1px solid #ccc;">19.90</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">147.15</td><td style="padding:8px; border:1px solid #ccc;">0.0832</td><td style="padding:8px; border:1px solid #ccc;">0.0628</td><td style="padding:8px; border:1px solid #ccc;">0.06263</td><td style="padding:8px; border:1px solid #ccc;">0.05</td><td style="padding:8px; border:1px solid #ccc;">-25.49</td><td style="padding:8px; border:1px solid #ccc;">0.06256</td><td style="padding:8px; border:1px solid #ccc;">0.07</td><td style="padding:8px; border:1px solid #ccc;">11.89</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">196.20</td><td style="padding:8px; border:1px solid #ccc;">0.1029</td><td style="padding:8px; border:1px solid #ccc;">0.0837</td><td style="padding:8px; border:1px solid #ccc;">0.08351</td><td style="padding:8px; border:1px solid #ccc;">0.06</td><td style="padding:8px; border:1px solid #ccc;">-32.14</td><td style="padding:8px; border:1px solid #ccc;">0.08341</td><td style="padding:8px; border:1px solid #ccc;">0.09</td><td style="padding:8px; border:1px solid #ccc;">7.90</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">220.73</td><td style="padding:8px; border:1px solid #ccc;">0.1129</td><td style="padding:8px; border:1px solid #ccc;">0.0942</td><td style="padding:8px; border:1px solid #ccc;">0.09395</td><td style="padding:8px; border:1px solid #ccc;">0.07</td><td style="padding:8px; border:1px solid #ccc;">-29.04</td><td style="padding:8px; border:1px solid #ccc;">0.09384</td><td style="padding:8px; border:1px solid #ccc;">0.10</td><td style="padding:8px; border:1px solid #ccc;">6.56</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center; font-style:italic; margin-top:10px;">
+      Figure 33: Structural Integrity Test: Actual vs Simulated Results
+    </p>
+
+    <div style="margin-top:20px;">
+      <div class="chart-card">
+        <canvas id="fig34-chart" class="report-chart"></canvas>
+      </div>
+      <p style="text-align:center; font-style:italic; margin-top:10px;">
+        Figure 34: Structural Integrity Test: Actual vs Simulated Graph
+      </p>
+    </div>
+
+    <p>
+      The simulation case with downward force accounts for additional loads from ¼ of the vehicle weight
+      and the motor weight. These loads were not directly replicated in the experimental setup due to
+      practicality. The primary effect, from Figure 33, shows a shift of the y-intercept, from 0 to
+      0.032, without significantly changing the graph’s gradient (0.04). This shows that the additional
+      static loading contributes to initial deformation but does not affect the inherent structural
+      stiffness.
+    </p>
+
+    <p>
+      The experimental deflection results obtained from Dial Gauge 3 (DG3), when compared to the maximum
+      deformation predicted by the FEA, show an approximately linear relationship with the applied moment.
+      However, the measured deflections are consistently lower than the simulated values, suggesting that
+      the actual structure is stronger than the simulation. The discrepancy is more pronounced at lower
+      load levels, where the absolute deflections are small and even minor measurement variations can lead
+      to relatively large percentage deviations. This is also limited by the equipment accuracy, as the
+      dial gauge is 0.01mm, and the scale is 0.5kg, which could lead to less accurate moment readings. A
+      potential explanation for the lower deflection in DG3 could be due to the slight movement of the
+      T-slot moment arm, reducing the effective moment length and hence the actual moment applied.
+      Additionally, manufacturing imperfections such as weld variability and geometric deviations from the
+      ideal CAD model can introduce further differences.
+    </p>
+
+    <p>
+      Although the FEA predicts the global maximum deflection at the DG3 location, the experimental data
+      in Figure 33 showed a slightly higher deflection was observed at the DG4 position. This can be
+      caused by the non-ideal physical experimental setup, including imperfectly manufactured geometry,
+      uneven stiffness distribution due to fabrication, and slight differences in dial gauge placement.
+      These can locally change the maximum deformation location but are unlikely to significantly affect
+      the overall structural response.
+    </p>
+
+    <p>
+      Despite these discrepancies, the overall trend remains consistent, with both experimental and
+      simulation results demonstrating clear linear behaviour. The close agreement in gradient confirms
+      that the FEA model captures the actual frame stiffness reasonably well. Despite the modelling
+      simplifications and experimental uncertainties, the experimental data remained within acceptable
+      deformation limits under the design load, indicating that the design is physically safe for its
+      intended application.
+    </p>
+  </div>
+
+  <div id="anti-toppling-stability-test">
+    <h3>8.2 Anti-Toppling Stability Test</h3>
+
+    <p>
+      The objective was to assess whether the counterbalance beam from Section 6.2 was sufficient to
+      prevent the dyno from tipping under the design load in a free-standing setup.
+    </p>
+    <p>
+      Instead of clamping the frame to the bench, as done in Section 8.1, a downward force of 795N was
+      applied to the frame to simulate the weight of the car and motor. A weighing scale was placed under
+      each side of the frame’s wheels to monitor the shift in weight distribution, as shown in Figure 35,
+      as the weighted moment arm was applied. The moment arm was set up as described in Section 8, using
+      the same T-slot beam, scale, and clamp, as shown in Figure 36. As the moment increases, the dyno’s
+      weight is redistributed across the four wheels, increasing the load on the left scale while
+      reducing the right scale reading. A right scale reading approaching zero indicates that the frame is
+      near the tipping point. The test was repeated across multiple counterbalance beam lengths of 0m,
+      0.17m, 0.24m and 0.40m.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; align-items:start;">
+      <image-component
+        tag="fig35"
+        source="assets/figure35_anti_topple_angle1.png"
+        subtitle="Figure 35: Anti-Toppling Stability Test Angle 1"
+      ></image-component>
+      <image-component
+      tag="fig36"
+      source="assets/figure36_anti_topple_angle2.png"
+      subtitle="Figure 36: Anti-Toppling Stability Test Angle 2"
+      ></image-component>
+    </div>
+
+    <p><strong>Procedure:</strong></p>
+    <ul>
+      <li>Install the T-slot moment arm (0.5m) into 2 of the motor mounting holes.</li>
+      <li>Place a weighing scale under each side (2 caster wheels per scale).</li>
+      <li>Apply a downward force of approximately 795 N (vehicle and motor weight).</li>
+      <li>Record unloaded baseline readings before adding moment through the beam.</li>
+      <li>Apply weights on the end of the T-slot moment arm incrementally to increase the moment.</li>
+      <li>Record the scale readings after each load increment.</li>
+      <li>Continue loading until either the maximum torque load (220Nm) is reached or when the right scale reading approaches zero.</li>
+      <li>Repeat with a different counterbalance beam lengths.</li>
+    </ul>
+
+    <p>
+      The test was repeated across multiple counterbalance beam lengths of 0 m, 0.17 m, 0.24 m, and
+      0.40 m. A right-scale reading approaching zero indicates that the frame is nearing the tipping
+      point.
+    </p>
+
+    <div style="width:100%; overflow-x:auto; margin-top:20px;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:880px;">
+        <thead>
+          <tr style="background:#e6e6e6; text-align:left;">
+            <th style="padding:8px; border:1px solid #ccc;">Step</th>
+            <th style="padding:8px; border:1px solid #ccc;">Extension Beam Length (m)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Beam Length (m)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Weight Added (kg)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Equivalent Moment (Nm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Left Scale Reading (kg)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Right Scale Reading (kg)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Phase</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:8px; border:1px solid #ccc;">1</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">6.0</td><td style="padding:8px; border:1px solid #ccc;">29.43</td><td style="padding:8px; border:1px solid #ccc;">61.0</td><td style="padding:8px; border:1px solid #ccc;">41.5</td><td style="padding:8px; border:1px solid #ccc;">Rest</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">2</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">15.5</td><td style="padding:8px; border:1px solid #ccc;">76.03</td><td style="padding:8px; border:1px solid #ccc;">85.0</td><td style="padding:8px; border:1px solid #ccc;">28.5</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">3</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">26.0</td><td style="padding:8px; border:1px solid #ccc;">127.53</td><td style="padding:8px; border:1px solid #ccc;">105.0</td><td style="padding:8px; border:1px solid #ccc;">19.0</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">4</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">36.0</td><td style="padding:8px; border:1px solid #ccc;">176.58</td><td style="padding:8px; border:1px solid #ccc;">120.0</td><td style="padding:8px; border:1px solid #ccc;">13.0</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">5</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">46.5</td><td style="padding:8px; border:1px solid #ccc;">228.08</td><td style="padding:8px; border:1px solid #ccc;">137.0</td><td style="padding:8px; border:1px solid #ccc;">6.5</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">6</td><td style="padding:8px; border:1px solid #ccc;">0.00</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">DNF</td><td style="padding:8px; border:1px solid #ccc;">DNF</td><td style="padding:8px; border:1px solid #ccc;">DNF</td><td style="padding:8px; border:1px solid #ccc;">DNF</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center; font-style:italic; margin-top:10px;">
+      Figure 37: Anti-Toppling Test: Scale Readings vs Moment (Extension Beam Length = 0 m)
+    </p>
+
+    <div style="width:100%; overflow-x:auto; margin-top:20px;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:880px;">
+        <thead>
+          <tr style="background:#e6e6e6; text-align:left;">
+            <th style="padding:8px; border:1px solid #ccc;">Step</th>
+            <th style="padding:8px; border:1px solid #ccc;">Extension Beam Length (m)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Beam Length (m)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Weight Added (kg)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Equivalent Moment (Nm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Left Scale Reading (kg)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Right Scale Reading (kg)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Phase</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:8px; border:1px solid #ccc;">1</td><td style="padding:8px; border:1px solid #ccc;">0.17</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">5.5</td><td style="padding:8px; border:1px solid #ccc;">26.98</td><td style="padding:8px; border:1px solid #ccc;">41.5</td><td style="padding:8px; border:1px solid #ccc;">51.5</td><td style="padding:8px; border:1px solid #ccc;">Rest</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">2</td><td style="padding:8px; border:1px solid #ccc;">0.17</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">15.5</td><td style="padding:8px; border:1px solid #ccc;">76.03</td><td style="padding:8px; border:1px solid #ccc;">59.5</td><td style="padding:8px; border:1px solid #ccc;">42.0</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">3</td><td style="padding:8px; border:1px solid #ccc;">0.17</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">25.5</td><td style="padding:8px; border:1px solid #ccc;">125.08</td><td style="padding:8px; border:1px solid #ccc;">78.0</td><td style="padding:8px; border:1px solid #ccc;">32.0</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">4</td><td style="padding:8px; border:1px solid #ccc;">0.17</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">35.5</td><td style="padding:8px; border:1px solid #ccc;">174.13</td><td style="padding:8px; border:1px solid #ccc;">92.0</td><td style="padding:8px; border:1px solid #ccc;">25.0</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">5</td><td style="padding:8px; border:1px solid #ccc;">0.17</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">45.5</td><td style="padding:8px; border:1px solid #ccc;">223.18</td><td style="padding:8px; border:1px solid #ccc;">106.0</td><td style="padding:8px; border:1px solid #ccc;">19.5</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">6</td><td style="padding:8px; border:1px solid #ccc;">0.17</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">50.0</td><td style="padding:8px; border:1px solid #ccc;">245.25</td><td style="padding:8px; border:1px solid #ccc;">112.5</td><td style="padding:8px; border:1px solid #ccc;">17.5</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center; font-style:italic; margin-top:10px;">
+      Figure 38: Anti-Toppling Test: Scale Readings vs Moment (Extension Beam Length = 0.17 m)
+    </p>
+
+    <div style="width:100%; overflow-x:auto; margin-top:20px;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:880px;">
+        <thead>
+          <tr style="background:#e6e6e6; text-align:left;">
+            <th style="padding:8px; border:1px solid #ccc;">Step</th>
+            <th style="padding:8px; border:1px solid #ccc;">Extension Beam Length (m)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Beam Length (m)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Weight Added (kg)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Equivalent Moment (Nm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Left Scale Reading (kg)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Right Scale Reading (kg)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Phase</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:8px; border:1px solid #ccc;">1</td><td style="padding:8px; border:1px solid #ccc;">0.24</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">5.5</td><td style="padding:8px; border:1px solid #ccc;">26.98</td><td style="padding:8px; border:1px solid #ccc;">41.0</td><td style="padding:8px; border:1px solid #ccc;">52.5</td><td style="padding:8px; border:1px solid #ccc;">Rest</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">2</td><td style="padding:8px; border:1px solid #ccc;">0.24</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">16.5</td><td style="padding:8px; border:1px solid #ccc;">80.93</td><td style="padding:8px; border:1px solid #ccc;">58.5</td><td style="padding:8px; border:1px solid #ccc;">43.5</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">3</td><td style="padding:8px; border:1px solid #ccc;">0.24</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">26.0</td><td style="padding:8px; border:1px solid #ccc;">127.53</td><td style="padding:8px; border:1px solid #ccc;">74.0</td><td style="padding:8px; border:1px solid #ccc;">36.5</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">4</td><td style="padding:8px; border:1px solid #ccc;">0.24</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">35.5</td><td style="padding:8px; border:1px solid #ccc;">174.13</td><td style="padding:8px; border:1px solid #ccc;">87.0</td><td style="padding:8px; border:1px solid #ccc;">31.5</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">5</td><td style="padding:8px; border:1px solid #ccc;">0.24</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">45.5</td><td style="padding:8px; border:1px solid #ccc;">223.18</td><td style="padding:8px; border:1px solid #ccc;">101.5</td><td style="padding:8px; border:1px solid #ccc;">25.5</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">6</td><td style="padding:8px; border:1px solid #ccc;">0.24</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">49.5</td><td style="padding:8px; border:1px solid #ccc;">242.80</td><td style="padding:8px; border:1px solid #ccc;">105.5</td><td style="padding:8px; border:1px solid #ccc;">23.5</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center; font-style:italic; margin-top:10px;">
+      Figure 39: Anti-Toppling Test: Scale Readings vs Moment (Extension Beam Length = 0.24 m)
+    </p>
+
+    <div style="width:100%; overflow-x:auto; margin-top:20px;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:880px;">
+        <thead>
+          <tr style="background:#e6e6e6; text-align:left;">
+            <th style="padding:8px; border:1px solid #ccc;">Step</th>
+            <th style="padding:8px; border:1px solid #ccc;">Extension Beam Length (m)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Beam Length (m)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Weight Added (kg)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Equivalent Moment (Nm)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Left Scale Reading (kg)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Right Scale Reading (kg)</th>
+            <th style="padding:8px; border:1px solid #ccc;">Phase</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:8px; border:1px solid #ccc;">1</td><td style="padding:8px; border:1px solid #ccc;">0.40</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">5.5</td><td style="padding:8px; border:1px solid #ccc;">26.98</td><td style="padding:8px; border:1px solid #ccc;">39.0</td><td style="padding:8px; border:1px solid #ccc;">54.5</td><td style="padding:8px; border:1px solid #ccc;">Rest</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">2</td><td style="padding:8px; border:1px solid #ccc;">0.40</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">15.5</td><td style="padding:8px; border:1px solid #ccc;">76.03</td><td style="padding:8px; border:1px solid #ccc;">56.0</td><td style="padding:8px; border:1px solid #ccc;">45.0</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">3</td><td style="padding:8px; border:1px solid #ccc;">0.40</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">25.5</td><td style="padding:8px; border:1px solid #ccc;">125.08</td><td style="padding:8px; border:1px solid #ccc;">73.0</td><td style="padding:8px; border:1px solid #ccc;">36.5</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">4</td><td style="padding:8px; border:1px solid #ccc;">0.40</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">35.5</td><td style="padding:8px; border:1px solid #ccc;">174.13</td><td style="padding:8px; border:1px solid #ccc;">87.0</td><td style="padding:8px; border:1px solid #ccc;">31.0</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">5</td><td style="padding:8px; border:1px solid #ccc;">0.40</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">45.5</td><td style="padding:8px; border:1px solid #ccc;">223.18</td><td style="padding:8px; border:1px solid #ccc;">101.5</td><td style="padding:8px; border:1px solid #ccc;">25.5</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+          <tr><td style="padding:8px; border:1px solid #ccc;">6</td><td style="padding:8px; border:1px solid #ccc;">0.40</td><td style="padding:8px; border:1px solid #ccc;">0.5</td><td style="padding:8px; border:1px solid #ccc;">50.5</td><td style="padding:8px; border:1px solid #ccc;">247.70</td><td style="padding:8px; border:1px solid #ccc;">108.5</td><td style="padding:8px; border:1px solid #ccc;">23.0</td><td style="padding:8px; border:1px solid #ccc;">Loading</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center; font-style:italic; margin-top:10px;">
+      Figure 40: Anti-Toppling Test: Scale Readings vs Moment (Extension Beam Length = 0.40 m)
+    </p>
+
+    <div style="margin-top:20px;">
+      <div class="chart-card">
+        <canvas id="fig41-chart" class="report-chart"></canvas>
+      </div>
+      <p style="text-align:center; font-style:italic; margin-top:10px;">
+        Figure 41: Anti-Toppling Test: Scale Readings vs Moment Graph
+      </p>
+    </div>
+
+    <p>
+      The results clearly show that the counterbalance extension beam was required. Without it, the right
+      scale reading dropped to just 6.5 kg at 228 Nm, before the test could not be continued safely
+      (DNF), as shown in Figure 37, at the next load increment. With the extension beam installed, all
+      three configurations could be loaded until 240 Nm without the right scale approaching zero,
+      confirming that the beam provides stability.
+    </p>
+
+    <p>
+      The results for the 0.24 m and 0.40 m extension beams were very similar, with right scale readings
+      of 23.5 kg and 23.0 kg, respectively, at approximately 240 Nm. This validates the earlier
+      calculation from Section 6.2, which predicted that a 0.24 m extension is sufficient to
+      counterbalance the motor's maximum torque. The marginal improvement from increasing the beam to 0.40
+      m suggests the diminishing returns for beams longer than 0.24m. We can conclude that the 0.24 m
+      beam is optimal, providing stability while keeping the dyno compact enough for transport and
+      repositioning without removing the extension beam.
+    </p>
+  </div>
+</div>
+<sl-divider></sl-divider>
+
+<!-- ========================= -->
+<!-- 9. SIMULATION -->
+<!-- ========================= -->
+<div id="simulation">
+  <h2>9. Simulation</h2>
+
+  <p>
+    Simulation was conducted to evaluate the dyno’s structural behaviour under operational conditions.
+    Modal analysis ensures that the frame does not resonate within the operating frequency range,
+    preventing excessive vibration and measurement errors, while fatigue analysis assesses the flange’s
+    durability under repeated torque loading to ensure long-term reliability and safe operation.
+  </p>
+
+  <div id="modal-analysis-frame">
+    <h3>9.1 Modal Analysis for Frame</h3>
+
+    <p>
+      The FSAE car operates from 0 to 120 km/h, with an average speed of about 65 km/h. Using a wheel
+      diameter of 0.4064 m, the wheel circumference is 1.2767 m.
+    </p>
+    <p><strong>Circumference = π × 0.4064 = 1.2767 m</strong></p>
+    <p>
+      Dividing the vehicle speed by the wheel circumference gives the wheel rotation frequency during
+      operation.
+    </p>
+
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <thead>
+        <tr style="background:#e6e6e6; text-align:left;">
+          <th style="padding:10px; border:1px solid #ccc;">Condition</th>
+          <th style="padding:10px; border:1px solid #ccc;">Speed (km/h)</th>
+          <th style="padding:10px; border:1px solid #ccc;">Speed (m/s)</th>
+          <th style="padding:10px; border:1px solid #ccc;">Wheel Speed (RPM)</th>
+          <th style="padding:10px; border:1px solid #ccc;">Frequency (Hz)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:10px; border:1px solid #ccc;">Minimum</td><td style="padding:10px; border:1px solid #ccc;">0</td><td style="padding:10px; border:1px solid #ccc;">0</td><td style="padding:10px; border:1px solid #ccc;">0</td><td style="padding:10px; border:1px solid #ccc;">0</td></tr>
+        <tr><td style="padding:10px; border:1px solid #ccc;">Average</td><td style="padding:10px; border:1px solid #ccc;">65</td><td style="padding:10px; border:1px solid #ccc;">18.06</td><td style="padding:10px; border:1px solid #ccc;">848.5</td><td style="padding:10px; border:1px solid #ccc;">14.13</td></tr>
+        <tr><td style="padding:10px; border:1px solid #ccc;">Maximum</td><td style="padding:10px; border:1px solid #ccc;">120</td><td style="padding:10px; border:1px solid #ccc;">33.33</td><td style="padding:10px; border:1px solid #ccc;">1566.8</td><td style="padding:10px; border:1px solid #ccc;">26.11</td></tr>
+      </tbody>
+    </table>
+    <p style="text-align:center; font-style:italic; margin-top:10px;">
+      Figure 42: Frequency of the car at various speeds
+    </p>
+
+    <p>
+      The dynamometer will therefore be subjected to excitation frequencies from 0 to 26.11 Hz during
+      operation. To avoid resonance, the structural natural frequencies should remain outside this range.
+      A modal analysis was conducted in SolidWorks, and the first five mode frequencies are shown below.
+    </p>
+
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <thead>
+        <tr style="background:#e6e6e6; text-align:left;">
+          <th style="padding:10px; border:1px solid #ccc;">Mode Number</th>
+          <th style="padding:10px; border:1px solid #ccc;">Frequency (Hz)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:10px; border:1px solid #ccc;">1</td><td style="padding:10px; border:1px solid #ccc;">229.56</td></tr>
+        <tr><td style="padding:10px; border:1px solid #ccc;">2</td><td style="padding:10px; border:1px solid #ccc;">256.31</td></tr>
+        <tr><td style="padding:10px; border:1px solid #ccc;">3</td><td style="padding:10px; border:1px solid #ccc;">389.19</td></tr>
+        <tr><td style="padding:10px; border:1px solid #ccc;">4</td><td style="padding:10px; border:1px solid #ccc;">422.40</td></tr>
+        <tr><td style="padding:10px; border:1px solid #ccc;">5</td><td style="padding:10px; border:1px solid #ccc;">438.35</td></tr>
+      </tbody>
+    </table>
+    <p style="text-align:center; font-style:italic; margin-top:10px;">
+      Figure 43: Modal Analysis Frequency of the Dyno
+    </p>
+
+    <p>
+      The lowest natural frequency of the dyno is 229.56 Hz, which is roughly ten times larger than the
+      maximum excitation frequency of 26.11 Hz at the car’s top speed. This provides a large separation
+      between operating conditions and the first structural mode, indicating that resonance is unlikely in
+      the intended speed range.
+    </p>
+  </div>
+
+  <div id="fatigue-analysis-flange">
+    <h3>9.2 Fatigue Analysis for Flange</h3>
+
+    <p>
+      A fatigue analysis was conducted using a design life of 10<sup>6</sup> cycles to evaluate the
+      high-cycle fatigue performance of the flange under repeated torque loading. This cycle count was
+      selected to represent a typical high-cycle fatigue condition and to assess the durability of the
+      component under prolonged operation.
+    </p>
+
+    <p>
+      A load ratio of R=0 was adopted, corresponding to a pulsating loading condition where the applied
+      torque varies between zero and a maximum value without reversing direction. This assumption reflects
+      the operational characteristics of the dyno system, in which torque is primarily unidirectional
+      rather than fully reversed, making it a realistic representation of the loading scenario.
+    </p>
+
+    <image-component
+      tag="fig44"
+      source="assets/figure44_fatigue_simulation.png"
+      subtitle="Figure 44: Fatigue Simulation"
+    ></image-component>
+
+    <p>
+      The fatigue life plot shows that most of the flange achieves a fatigue life close to or above
+      10<sup>6</sup> cycles, while a small localised region near the bolt hole exhibits a minimum life of
+      about 2.48 × 10<sup>5</sup> cycles. This reduced life is attributed to the stress concentration at
+      the bolt interface where torque is transferred through the flange. Since fatigue failure is governed
+      by the weakest point, this minimum value is treated as the limiting fatigue life of the component.
+    </p>
+
+    <p>
+      To relate this result to vehicle travel distance, the wheel circumference was first calculated using
+      the given wheel diameter of 0.4064 m. The circumference is π × 0.4064 = 1.2767 m. Assuming one
+      load cycle per wheel rotation, the minimum fatigue life of 2.48 × 10<sup>5</sup> cycles
+      corresponds to a travel distance of 2.48 × 10<sup>5</sup> × 1.2767 = 3.17 × 10<sup>5</sup> m,
+      which is approximately 317 km of continuous full-load operation.
+    </p>
+
+    <p>
+      Although this value appears relatively low, it should be noted that it is governed only by a very
+      small localized hotspot, whereas the major portion of the flange has a much longer predicted fatigue
+      life, approaching or exceeding 10<sup>6</sup> cycles. In addition, washers were introduced at these
+      localized bolt-contact regions to improve load distribution and reduce the severity of the stress
+      concentration.
+    </p>
+
+    <p>
+      It is important to note that the above estimation assumes continuous operation at maximum torque,
+      which represents a highly conservative loading condition. In practical dyno operation, loading is
+      variable and full-load conditions occur only intermittently, resulting in significantly lower
+      fatigue damage accumulation per cycle. Therefore, the actual service life of the flange is expected
+      to be substantially longer than the calculated value.
+    </p>
+
+    <p>
+      Based on these findings, the current flange design is considered acceptable for the intended dyno
+      testing application. Nevertheless, it is recommended that the FSAE team pay particular attention to
+      the bolt interface region during operation and maintenance, as this remains the most critical
+      location for potential fatigue initiation.
+    </p>
+  </div>
+</div>
+<sl-divider></sl-divider>
+
+<!-- ========================= -->
+<!-- 10. CONCLUSION -->
+<!-- ========================= -->
+<div id="conclusion">
+  <h2>10. Conclusion</h2>
+
+  <div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:20px; align-items:stretch;">
+    <image-component
+      tag="fig45"
+      source="assets/figure45_final_dyno.jpg"
+      subtitle="Figure 45: Final Dyno"
+      img-style="width:100%; height:280px; object-fit:cover;"
+      figure-style="justify-content:flex-start;"
+    ></image-component>
+    <image-component
+      tag="fig46"
+      source="assets/figure46_final_dyno_i.jpg"
+      subtitle="Figure 46: Final Dyno I"
+      img-style="width:100%; height:280px; object-fit:cover;"
+      figure-style="justify-content:flex-start;"
+    ></image-component>
+    <image-component
+      tag="fig47"
+      source="assets/figure47_final_dyno_iii.jpg"
+      subtitle="Figure 47: Final Dyno III"
+      img-style="width:100%; height:280px; object-fit:cover;"
+      figure-style="justify-content:flex-start;"
+    ></image-component>
+  </div>
+
+  <p>
+    Our project has completed and documented the design, fabrication, and testing of Phase 1 of the NUS
+    FSAE hub-mounted dynamometer, as shown in Figures 45 to 47, covering the structural frame,
+    wheel-hub mounting flange, and cooling system.
+  </p>
+
+  <p>
+    The dyno’s frame comprises a welded AISI 1010 steel truss structure with aluminium panels, balancing
+    structural strength, modularity, and ease of modification. FEA simulations calculated a minimum
+    factor of safety greater than 3, under the expected load of 795 N downwards and 220 Nm of torque.
+    Modal analysis showed the frame's lowest natural frequency is 257.19 Hz, approximately 10 times
+    higher than the frequency of 26.11 Hz at the car's top speed, confirming that resonance is unlikely
+    within the operating range.
+  </p>
+
+  <p>
+    For the mounting flange, a direct hub-to-motor flange interface was developed and validated through
+    FEA. With AISI 1045 steel and a refined mesh, the minimum factor of safety of 1.6 met the target of
+    1.5. The fatigue analysis identified the bolt interface region as the most critical point, with a
+    conservative minimum fatigue life corresponding to approximately 317 km of continuous full-load
+    operation. In practice, the actual service life is expected to be significantly longer, given the
+    intermittent and variable loading nature of dyno runs.
+  </p>
+
+  <p>
+    Physical testing validated both the structural integrity and the anti-toppling stability of the
+    frame. The structural integrity test confirmed that the truss structure could withstand the maximum
+    moment of 220 Nm without visible deformation or permanent damage, with experimental results showing
+    consistent linear behaviour and similar to FEA predictions. The anti-toppling stability test
+    demonstrated that the 0.24 m counterbalance beam extension was optimal to maintain stability for the
+    maximum torque, consistent with the hand calculation conducted.
+  </p>
+
+  <p>
+    Some manufacturing and assembly lessons were also taken away from our project. GD&amp;T positional
+    tolerancing should be incorporated in future design drawings to account for error stack-up in
+    fastener hole patterns, and tighter fabrication tolerances on the flange dowel holes would reduce the
+    need for post-fabrication rework. Additionally, fabrication delays from the external vendor shortened
+    the available testing window, highlighting the importance of buffer time when outsourcing to external
+    fabricators.
+  </p>
+
+  <p>
+    Overall, the Phase 1 prototype demonstrates that the frame is structurally sound and safe for its
+    intended application. The design is modular and extensible, providing a solid foundation for Phase 2,
+    where the electrical integration of the motor controller and data acquisition system will be
+    developed to enable full torque and power measurement of the FSAE EV.
+  </p>
+</div>
+<sl-divider></sl-divider>
+
+    <!-- ========================= -->
+    <!--        REFERENCES         -->
+    <!-- ========================= -->
+    <div id="references" class="references">
+      <h2>References</h2>
+      <ul>
+        <ol>
+          <li>Bruce, D. (2025, January 27). <em>Why do electric vehicles have more torque?</em> https://evi-usa.com/why-do-electric-vehicles-have-more-torque/</li>
+        
+          <li>Dynapack. (2025). <em>DAQ series hub dynamometers.</em> https://www.dynapack.com</li>
+        
+          <li>Dynolyze. (2024). <em>Dynolyze small 2WD hub dyno system.</em> https://www.dynolyze.eu/</li>
+          <li>Edwards, E. (2019, October 21). <em>What is a 3‑Phase Motor and How Does it Work?</em> Reviewed by Dr. Hani Gomez, PhD (September 22 2025). https://www.thomasnet.com/articles/machinery-tools‑supplies/what‑is‑a‑3‑phase‑motor‑and‑how‑does‑it‑work/</li>
+ 
+          <li>Electrical Technology. (n.d.). <em>Types of electric motors: Working & applications.</em> https://www.electricaltechnology.org/2021/01/types-of-electric-motors.html</li>
+        
+          <li>Electrical Volt. (n.d.). <em>Types of electric motors — construction, working, and applications.</em> https://www.electricalvolt.com/types-of-electric-motors/</li>
+        
+          <li>EMRAX d.o.o. (n.d.). <em>EMRAX 228 — High-performance axial flux electric motor.</em> https://emrax.com/e-motors/emrax-228/</li>
+        
+          <li>Formula SAE. (2025, September 10). <em>Formula SAE rules and documents.</em> SAE International. https://www.fsaeonline.com/cdsweb/gen/DocumentResources.aspx</li>
+        
+          <li>Lee, T. Y. (2022, June 30). <em>Singapore's first electric Formula SAE race car, built completely by undergraduates!</em> Updated July 1, 2022. https://www.motorist.sg/article/1546/singapore-s-first-electric-formula-sae-race-car-built-completely-by-undergraduates</li>
+        
+          <li>Mainline Dyno. (n.d.). <em>ProHub AWD (AWD Axle Shaft) chassis dynamometers (CCS).</em> https://mainlinedyno.com.au/index.php/dynamometers/prohub-awd-axle-shaft-chassis-dynamometers-ccs</li>
+        
+          <li>Mann Engineering. (n.d.). <em>Chassis dyno services.</em> https://www.mann-engineering.com/pages/chassis-dyno-services</li>
+        
+          <li>Mighty Car Mods. (2024, September 01). <em>Engine dyno vs chassis dyno vs hub dyno.</em> https://mightycarmods.com/blogs/news/engine-dyno-vs-chassis-dyno-vs-hub-dyno</li>
+        
+          <li>Mustang Advanced Engineering. (n.d.). <em>Electric vehicle dynamometer systems.</em> https://www.mustangae.com</li>
+        
+          <li>Mustang Advanced Engineering. (n.d.). <em>Hub & axle dynos — direct-drive dynamometer systems.</em> https://www.mustangae.com/hub-axle-dynos/</li>
+        
+          <li>Pokharel, P., Antoine, T., Joseph, G., & Warner, N. (2024). <em>Frame design and fabrication of engine dynamometers for FSAE cars.</em> <em>Journal of Innovative Ideas in Engineering and Technology, 1</em>(1), 33–97. https://jiiet.com/index.php/jiiet/article/view/103</li>
+        
+          <li>Perek IT. (n.d.). <em>What dyno type is right for me?</em> https://perek.it/help/what-dyno-type-is-right-for-me/</li>
+        
+          <li>Power Test. (n.d.). <em>Electric motor test systems.</em> https://powertestdyno.com/product/electric-motor-test-systems/</li>
+        
+          <li>Wei Zheng. (n.d.). <em>How much does a dyno machine cost? Full guide.</em> https://www.chinamachpro.com/how-much-does-a-dyno-machine-cost-guide/</li>
+        
+          <li>Windings Inc. (2024, June 25). <em>The crucial role of dyno testing in electric motor development.</em> https://www.windings.com/post/the-crucial-role-of-dyno-testing-in-electric-motor-development/</li>
+        
+          <li>Xinnuo Motor Co. Ltd. (n.d.). <em>1.5 kW to 200 kW AC electric motors — product specifications.</em> https://xinnuo.en.made-in-china.com/product/paWUSPFvaJrz/China-1-5kw-5kw-10kw-11kw-15kw-20kw-25kw-40kw-50kw-80kw-150kw-7-5-200-Kw-3000W-10000-20000-Watt15000W-AC-Electric-Motor.html</li>
+        </ol>
+
+      </ul>
+    </div>
+  <sl-divider></sl-divider>
+
+    <!-- ========================= -->
+    <!--         Appendix          -->
+    <!-- ========================= -->
+    <div id="appendix">
+      <h2>Appendix</h2>
+      <div class="appendix-accordion">
+        <sl-details summary="Appendix A: Emrax 228 Motor Specification" open>
+          <div class="appendix-panel">
+            <p>Peak power: 124 kW, Continuous: 75 kW</p>
+            <p>Peak torque: 220 Nm, Continuous: 130 Nm</p>
+            <p>Max speed: 6500 RPM</p>
+            <p>Cooling: air, liquid, combined options (Combined cooling used in FSAE car)</p>
+            <p>Axial flux permanent magnet synchronous motor (high power density)</p>
+          </div>
+        </sl-details>
+
+        <sl-details summary="Appendix B: Table on How Each Motor Works">
+          <div class="appendix-panel">
+            <table style="width:100%; border-collapse:collapse; font-size:14px;">
+              <thead>
+                <tr style="background:#e6e6e6; text-align:left;">
+                  <th style="padding:10px; border:1px solid #ccc;">Motor Type</th>
+                  <th style="padding:10px; border:1px solid #ccc;">How It Works</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding:10px; border:1px solid #ccc;">Brushed Direct Current</td><td style="padding:10px; border:1px solid #ccc;">Uses mechanical switching through a brush and commutator to reverse current direction in the rotor.</td></tr>
+                <tr><td style="padding:10px; border:1px solid #ccc;">Brushless Direct Current</td><td style="padding:10px; border:1px solid #ccc;">Uses electronic switching to control current through the stator coils for smooth brushless rotation.</td></tr>
+                <tr><td style="padding:10px; border:1px solid #ccc;">Radial Flux PMSM</td><td style="padding:10px; border:1px solid #ccc;">Uses permanent magnets on a cylindrical rotor with radial magnetic flux between rotor and stator.</td></tr>
+                <tr style="background:#c6e8a1;"><td style="padding:10px; border:1px solid #ccc; font-weight:bold;">Axial Flux PMSM</td><td style="padding:10px; border:1px solid #ccc;">Uses a flat, disk-like rotor-stator arrangement where magnetic flux flows axially.</td></tr>
+                <tr><td style="padding:10px; border:1px solid #ccc;">Induction Motor</td><td style="padding:10px; border:1px solid #ccc;">Uses electromagnetic induction to generate rotor current and produce rotation without direct electrical connection to the rotor.</td></tr>
+                <tr><td style="padding:10px; border:1px solid #ccc;">Switched Reluctance Motor</td><td style="padding:10px; border:1px solid #ccc;">Uses sequentially energised stator poles to pull the iron rotor into low-reluctance positions.</td></tr>
+                <tr><td style="padding:10px; border:1px solid #ccc;">Synchronous Reluctance Motor</td><td style="padding:10px; border:1px solid #ccc;">Uses the rotor’s tendency to align with low-reluctance paths in the rotating stator magnetic field.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </sl-details>
+
+        <sl-details summary="Appendix C: The mechanism of single, dual, and three-phase motors.">
+          <div class="appendix-panel">
+            <p>
+              Electric motors generate torque through the interaction of current-carrying coils and magnetic
+              fields, creating a rotating magnetic field (RMF) that causes the motor to rotate. The speed of
+              RMF will determine the speed of motor rotation.
+            </p>
+            <p>In a single-phase motor:</p>
+            <ul>
+              <li>AC goes in and out in a single Sine wave.</li>
+              <li>Magnetic field that pulsates back and forth.</li>
+              <li>Not smooth; requires “kick start” of rotation</li>
+            </ul>
+            <p>In a dual-phase motor:</p>
+            <ul>
+              <li>2 AC phases shifted by 90 degrees.</li>
+              <li>One pulls while the other pushes.</li>
+              <li>Not smooth and efficient.</li>
+            </ul>
+            <p>In a three-phase motor (e.g. EMRAX 228), the currents are 120° out of phase, creating a continuous rotational torque as shown in the graph.</p>
+            <image-component
+              tag="appendix-c-graph"
+              source="assets/appendix_extract/image52.png"
+              subtitle="Three-phase sine wave"
+            ></image-component>
+            <ul>
+              <li>AC in the same frequency but shifted 120 degrees apart.</li>
+              <li>Poles of the 3 coils are different in a single instant, generating an RMF.</li>
+              <li>Induces current in the rotor coils, hence it moves to align the polarity and generate torque.</li>
+              <li>Step 1: Current into U, out of V. W ~ 0 (Between in and out current).</li>
+              <li>Step 2: Current into V, out of W. U ~ 0 (Between in and out current).</li>
+              <li>Step 3: Current into W, out of U. V ~ 0 (Between in and out current).</li>
+              <li>Repeat.</li>
+            </ul>
+            <p>Source: https://www.thomasnet.com/articles/machinery-tools-supplies/what-is-a-3-phase-motor-and-how-does-it-work/?msockid=1bc2e3cf644c6ce40071f60e65f26d17</p>
+          </div>
+        </sl-details>
+
+        <sl-details summary="Appendix D: Torque-Induced Deformation Simulation Results.">
+          <div class="appendix-panel">
+            <table style="width:100%; border-collapse:collapse; font-size:14px;">
+              <thead>
+                <tr style="background:#e6e6e6; text-align:left;">
+                  <th style="padding:10px; border:1px solid #ccc;">Torque moment (Nm)</th>
+                  <th style="padding:10px; border:1px solid #ccc;">Deformation results with torque &amp; downward force</th>
+                  <th style="padding:10px; border:1px solid #ccc;">Deformation results with torque only</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding:10px; border:1px solid #ccc;">220</td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image53.png" alt="220 Nm with downward force" style="max-width:100%; height:auto;"></td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image58.png" alt="220 Nm torque only" style="max-width:100%; height:auto;"></td></tr>
+                <tr><td style="padding:10px; border:1px solid #ccc;">196.20</td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image54.png" alt="196.20 Nm with downward force" style="max-width:100%; height:auto;"></td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image59.png" alt="196.20 Nm torque only" style="max-width:100%; height:auto;"></td></tr>
+                <tr><td style="padding:10px; border:1px solid #ccc;">147.15</td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image55.png" alt="147.15 Nm with downward force" style="max-width:100%; height:auto;"></td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image60.png" alt="147.15 Nm torque only" style="max-width:100%; height:auto;"></td></tr>
+                <tr><td style="padding:10px; border:1px solid #ccc;">98.10</td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image56.png" alt="98.10 Nm with downward force" style="max-width:100%; height:auto;"></td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image61.png" alt="98.10 Nm torque only" style="max-width:100%; height:auto;"></td></tr>
+                <tr><td style="padding:10px; border:1px solid #ccc;">49.05</td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image57.png" alt="49.05 Nm with downward force" style="max-width:100%; height:auto;"></td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image62.png" alt="49.05 Nm torque only" style="max-width:100%; height:auto;"></td></tr>
+                <tr><td style="padding:10px; border:1px solid #ccc;">0</td><td style="padding:10px; border:1px solid #ccc;">NA</td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image63.png" alt="0 Nm torque only" style="max-width:100%; height:auto;"></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </sl-details>
+
+        <sl-details summary="Appendix E: Modal Analysis Results.">
+          <div class="appendix-panel">
+            <table style="width:100%; border-collapse:collapse; font-size:14px;">
+              <thead>
+                <tr style="background:#e6e6e6; text-align:left;">
+                  <th style="padding:10px; border:1px solid #ccc;">Modal Amplitude</th>
+                  <th style="padding:10px; border:1px solid #ccc;">Simulation Results</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding:10px; border:1px solid #ccc;">1</td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image64.png" alt="Mode 1" style="max-width:100%; height:auto;"></td></tr>
+                <tr><td style="padding:10px; border:1px solid #ccc;">2</td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image65.png" alt="Mode 2" style="max-width:100%; height:auto;"></td></tr>
+                <tr><td style="padding:10px; border:1px solid #ccc;">3</td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image66.png" alt="Mode 3" style="max-width:100%; height:auto;"></td></tr>
+                <tr><td style="padding:10px; border:1px solid #ccc;">4</td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image67.png" alt="Mode 4" style="max-width:100%; height:auto;"></td></tr>
+                <tr><td style="padding:10px; border:1px solid #ccc;">5</td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image68.png" alt="Mode 5" style="max-width:100%; height:auto;"></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </sl-details>
+      </div>
+    </div>
+      
+  </div>
+
+  <!-- Scroll-to-top button -->
+  <sl-button class="scroll-to-top" variant="primary" size="medium" circle onclick="scrollToTop()">
+    <sl-icon name="arrow-up"></sl-icon>
+  </sl-button>
+
+  <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script type="module" src="./components/table-component/table-component.js"></script>
+  
+  <!--Flange Max Stress VS Element Size Plot-->
+  <script>
+  new gridjs.Grid({
+    columns: [
+      { name: "Element Size (mm)", width: "160px" },
+      { name: "Maximum Stress (MPa)", width: "200px" },
+      { name: "Minimum FOS", width: "150px" },
+      { name: "% Change in Max Stress", width: "200px" }
+    ],
+    data: [
+      ["3.5", "199.9", "1.8", ""],
+      ["2.5", "238.7", "1.47", "19.41"],
+      ["1.5", "301.5", "1.17", "26.31"],
+      ["1.0", "288.9", "1.22", "-4.18"]
+    ],
+    allowHtml: true,
+    sort: true,
+    style: {
+      table: { "margin-top": "20px", "font-size": "14px" },
+      th: { "white-space": "nowrap" },   // Prevent header wrapping
+      td: { "vertical-align": "top", "padding": "12px" }
+    }
+  }).render(document.getElementById("mesh-table"));
+  </script>
+  
+  <!--Detail Steps for Next Semester-->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = Array.from(document.querySelectorAll(".page-sidebar a[href^='#']"));
+      const sectionMap = new Map(
+        navLinks
+          .map((link) => {
+            const id = link.getAttribute("href");
+            const section = id ? document.querySelector(id) : null;
+            return section ? [section, link] : null;
+          })
+          .filter(Boolean)
+      );
+
+      const setActiveLink = (activeSection) => {
+        navLinks.forEach((link) => link.classList.remove("active"));
+        const activeLink = sectionMap.get(activeSection);
+        if (activeLink) activeLink.classList.add("active");
+      };
+
+      const visibleSections = new Map();
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              visibleSections.set(entry.target, entry.boundingClientRect.top);
+            } else {
+              visibleSections.delete(entry.target);
+            }
+          });
+
+          if (visibleSections.size) {
+            const activeSection = [...visibleSections.entries()]
+              .sort((a, b) => Math.abs(a[1]) - Math.abs(b[1]))[0][0];
+            setActiveLink(activeSection);
+          }
+        },
+        {
+          rootMargin: "-18% 0px -68% 0px",
+          threshold: [0, 0.2, 0.45]
+        }
+      );
+
+      sectionMap.forEach((_, section) => observer.observe(section));
+
+      const equationLabelPlugin = {
+        id: "equationLabelPlugin",
+        afterDatasetsDraw(chart, _, pluginOptions) {
+          const labels = pluginOptions?.labels || [];
+          const { ctx } = chart;
+          ctx.save();
+          ctx.font = "13px 'Avenir Next', 'Segoe UI', sans-serif";
+          ctx.textBaseline = "middle";
+
+          labels.forEach((label) => {
+            const meta = chart.getDatasetMeta(label.datasetIndex);
+            const element = meta?.data?.[meta.data.length - 1];
+            if (!element) return;
+            const { x, y } = element.getProps(["x", "y"], true);
+            ctx.fillStyle = label.color || "#334e68";
+            ctx.fillText(label.text, x + (label.dx || 12), y + (label.dy || 0));
+          });
+
+          ctx.restore();
+        }
+      };
+
+      const makePointSeries = (label, color, points) => ({
+        label,
+        data: points,
+        borderColor: color,
+        backgroundColor: color,
+        pointRadius: 6,
+        pointHoverRadius: 7,
+        showLine: false
+      });
+
+      const makeTrendlineSeries = (label, color, points) => ({
+        label,
+        data: points,
+        borderColor: color,
+        backgroundColor: color,
+        pointRadius: 0,
+        pointHoverRadius: 0,
+        borderDash: [3, 6],
+        borderWidth: 2.5,
+        tension: 0,
+        showLine: true
+      });
+
+      new Chart(document.getElementById("fig34-chart"), {
+        type: "scatter",
+        data: {
+          datasets: [
+            makePointSeries("Simulation Max Deflection Without Downward Force", "#ef7f39", [
+              { x: 0.0, y: 0.0000 },
+              { x: 49.05, y: 0.0209 },
+              { x: 98.10, y: 0.0419 },
+              { x: 147.15, y: 0.0628 },
+              { x: 196.20, y: 0.0837 },
+              { x: 220.73, y: 0.0942 }
+            ]),
+            makePointSeries("Dial Gauge 3 — Deflection", "#2b9bd6", [
+              { x: 0.0, y: 0.0000 },
+              { x: 49.05, y: 0.0200 },
+              { x: 98.10, y: 0.0300 },
+              { x: 147.15, y: 0.0500 },
+              { x: 196.20, y: 0.0600 },
+              { x: 220.73, y: 0.0700 }
+            ]),
+            makePointSeries("Dial Gauge 4 — Deflection", "#1d7a32", [
+              { x: 0.0, y: 0.0000 },
+              { x: 49.05, y: 0.0300 },
+              { x: 98.10, y: 0.0500 },
+              { x: 147.15, y: 0.0700 },
+              { x: 196.20, y: 0.0900 },
+              { x: 220.73, y: 0.1000 }
+            ]),
+            makePointSeries("Simulation Max Deflection With Downward Force", "#52ae32", [
+              { x: 0.0, y: 0.0350 },
+              { x: 49.05, y: 0.0468 },
+              { x: 98.10, y: 0.0642 },
+              { x: 147.15, y: 0.0832 },
+              { x: 196.20, y: 0.1029 },
+              { x: 220.73, y: 0.1129 }
+            ]),
+            makeTrendlineSeries("Trendline Sim. Without Downward Force", "#ef7f39", [
+              { x: 0, y: -0.000003 },
+              { x: 220.73, y: 0.0883 }
+            ]),
+            makeTrendlineSeries("Trendline DG3", "#2b9bd6", [
+              { x: 0, y: 0.0020 },
+              { x: 220.73, y: 0.0682 }
+            ]),
+            makeTrendlineSeries("Trendline DG4", "#1d7a32", [
+              { x: 0, y: 0.0045 },
+              { x: 220.73, y: 0.1006 }
+            ]),
+            makeTrendlineSeries("Trendline Sim. With Downward Force", "#52ae32", [
+              { x: 0, y: 0.0317 },
+              { x: 220.73, y: 0.1200 }
+            ])
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: { usePointStyle: true, boxWidth: 10, padding: 22 }
+            },
+            equationLabelPlugin: {
+              labels: [
+                { datasetIndex: 4, text: "y = 0.0004x - 3E-06", color: "#4b4b4b", dx: -30, dy: -10 },
+                { datasetIndex: 5, text: "y = 0.0003x + 0.002", color: "#4b4b4b", dx: -50, dy: -6 },
+                { datasetIndex: 6, text: "y = 0.0004x + 0.0045", color: "#4b4b4b", dx: -62, dy: -24 },
+                { datasetIndex: 7, text: "y = 0.0004x + 0.0317", color: "#4b4b4b", dx: -62, dy: -6 }
+              ]
+            }
+          },
+          scales: {
+            x: {
+              type: "linear",
+              min: 0,
+              max: 250,
+              title: { display: true, text: "Moment (Nm)", color: "#4a5a68", font: { size: 14, weight: "600" } },
+              ticks: { stepSize: 50, color: "#5f7485" },
+              grid: { color: "rgba(26, 47, 71, 0.12)" }
+            },
+            y: {
+              min: -0.02,
+              max: 0.12,
+              title: { display: true, text: "Deflection (mm)", color: "#4a5a68", font: { size: 14, weight: "600" } },
+              ticks: { color: "#5f7485" },
+              grid: { color: "rgba(26, 47, 71, 0.12)" }
+            }
+          }
+        },
+        plugins: [equationLabelPlugin]
+      });
+
+      new Chart(document.getElementById("fig41-chart"), {
+        type: "scatter",
+        data: {
+          datasets: [
+            makePointSeries("0m", "#4e82c5", [
+              { x: 29.43, y: 41.5 },
+              { x: 76.03, y: 28.5 },
+              { x: 127.53, y: 19.0 },
+              { x: 176.58, y: 13.0 },
+              { x: 228.08, y: 6.5 }
+            ]),
+            makePointSeries("0.17m", "#cc5953", [
+              { x: 26.98, y: 51.5 },
+              { x: 76.03, y: 42.0 },
+              { x: 125.08, y: 32.0 },
+              { x: 174.13, y: 25.0 },
+              { x: 223.18, y: 19.5 },
+              { x: 245.25, y: 17.5 }
+            ]),
+            makePointSeries("0.24m", "#9dc34d", [
+              { x: 26.98, y: 52.5 },
+              { x: 80.93, y: 43.5 },
+              { x: 127.53, y: 36.5 },
+              { x: 174.13, y: 31.5 },
+              { x: 223.18, y: 25.5 },
+              { x: 242.80, y: 23.5 }
+            ]),
+            makePointSeries("0.4m", "#8160b5", [
+              { x: 26.98, y: 54.5 },
+              { x: 76.03, y: 45.0 },
+              { x: 125.08, y: 36.5 },
+              { x: 174.13, y: 31.0 },
+              { x: 223.18, y: 25.5 },
+              { x: 247.70, y: 23.0 }
+            ]),
+            makeTrendlineSeries("Trendline 0m", "#4e82c5", [
+              { x: 29.43, y: 38.51 },
+              { x: 228.08, y: 4.47 }
+            ]),
+            makeTrendlineSeries("Trendline 0.17m", "#cc5953", [
+              { x: 26.98, y: 50.30 },
+              { x: 245.25, y: 15.65 }
+            ]),
+            makeTrendlineSeries("Trendline 0.24m", "#9dc34d", [
+              { x: 26.98, y: 50.30 },
+              { x: 242.80, y: 21.77 }
+            ]),
+            makeTrendlineSeries("Trendline 0.4m", "#8160b5", [
+              { x: 26.98, y: 52.49 },
+              { x: 247.70, y: 21.62 }
+            ])
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: { usePointStyle: true, boxWidth: 10, padding: 22 }
+            },
+            equationLabelPlugin: {
+              labels: [
+                { datasetIndex: 7, text: "y = -0.1398x + 56.261", color: "#4b4b4b", dx: 10, dy: -2 },
+                { datasetIndex: 6, text: "y = -0.1322x + 54.791", color: "#4b4b4b", dx: 10, dy: -18 },
+                { datasetIndex: 5, text: "y = -0.1559x + 53.866", color: "#4b4b4b", dx: 10, dy: 6 },
+                { datasetIndex: 4, text: "y = -0.1713x + 43.55", color: "#4b4b4b", dx: 10, dy: -4 }
+              ]
+            }
+          },
+          scales: {
+            x: {
+              type: "linear",
+              min: 0,
+              max: 300,
+              title: { display: true, text: "Moment (Nm)", color: "#4a5a68", font: { size: 14, weight: "600" } },
+              ticks: { stepSize: 50, color: "#5f7485" },
+              grid: { color: "rgba(26, 47, 71, 0.12)" }
+            },
+            y: {
+              min: 0,
+              max: 60,
+              title: { display: true, text: "Right scale reading (kg)", color: "#4a5a68", font: { size: 14, weight: "600" } },
+              ticks: { stepSize: 10, color: "#5f7485" },
+              grid: { color: "rgba(26, 47, 71, 0.12)" }
+            }
+          }
+        },
+        plugins: [equationLabelPlugin]
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      new gridjs.Grid({
+        columns: ["Focus Area", "Purpose", "Actions"],
+        data: [
+          ["Frame Fabrication", "Physically assemble the dyno set-up and layout.", "Construct a welded frame based on the finalised CAD."],
+          ["Component Integration", "Validate the alignment and layout.", "Mount the motor and cooling components to the frame."],
+          ["Flow simulation", "Improve airflow and cooling efficiency before physical testing.", "Perform CFD to model air and coolant flow, refine radiator and pump placement, and adjust ducting for better thermal performance."],
+          ["Stability testing", "Assess stability under known external loading.", "Apply a 25 kg load at 1 m from the centre and evaluate for tipping; if unstable, design a counter-balance beam and retest."],
+          ["Cooling System Validation", "Verify that the cooling system is sufficient to cool the temperature of the dyno.", "Heat gun to heat up the area in the dyno, then switch on the cooling system to lower to a specific temperature."],
+          ["Fatigue and vibration simulation.", "Evaluate long-term structural durability and dynamic response.", "Conduct modal and harmonic analysis on the frame and flange, identify peak vibratory stresses, and verify fatigue life under cyclic torque."],
+          ["Strain gauge testing.", "Validate real-world strain/stress predictions against FEA.", "Mount strain gauges at critical regions of the flange and frame, collect data during controlled loading, and compare with simulation results."],
+          ["Documentation / Final Report", "Ensure all design, testing, and simulation processes are properly recorded.", "Compile technical drawings, FEA reports, CFD results, and test data into organized folders; Draft the final report."]
+        ],
+        pagination: false
+        /* search: true → removed */
+      }).render(document.getElementById("next-steps-table"));
+    });
+  </script>
+  
+  <!--Dynamometer Types-->
+  <script>
+    new gridjs.Grid({
+      columns: [
+        "Type",
+        "Description",
+        "Pros",
+        "Cons"
+      ],
+      data: [
+        [
+          "Chassis Dyno",
+          gridjs.html(`
+            <img src="assets/chassisdyno.jpg" width="160">
+          `),
+          "Realistic testing to output the power generated to the wheels.",
+          gridjs.html(`
+            Bulky and occupies a lot of space.<br>
+            Expensive rollers required for different torque ranges.<br>
+            High wheel slip risk for high-torque EVs.
+          `)
+        ],
+  
+        [
+          "Hub Dyno",
+          gridjs.html(`
+            <img src="assets/hubdyno.jpg" width="160">
+          `),
+          "Securely mounted to the vehicle.",
+          gridjs.html(`
+            Requires custom hub mounts.<br>
+            Bulky.<br>
+            Heavy.
+          `)
+        ],
+  
+        [
+          "EV Motor Dyno",
+          gridjs.html(`
+            <img src="assets/evmotordyno.jpg" width="160">
+          `),
+          "Measures motor output directly.",
+          gridjs.html(`
+            Motor removal is laborious.<br>
+            Sometimes already provided in spec sheet.
+          `)
+        ]
+      ],
+      sort: false,
+      style: {
+        table: { "font-size": "14px", "width": "100%" },
+        td: { "vertical-align": "top", "padding": "12px" }
+      }
+    }).render(document.getElementById("dyno-types-table"));
+  </script>
+  
+  <!--Comparison of commercial hub dynos’ prices.-->
+  <script>
+    new gridjs.Grid({
+      columns: [
+        { name: "Dyno Model", width: "180px" },
+        { name: "Image", width: "200px" },
+        { name: "Torque (Nm)", width: "120px" },
+        { name: "Max RPM", width: "120px" },
+        { name: "Price", width: "220px" }
+      ],
+  
+      data: [
+        [
+          "Dynapack DAQ53",
+          gridjs.html(`<img src="assets/dynapack.jpg" width="160">`),
+          "7500",
+          "2450",
+          "From USD $117,480"
+        ],
+  
+        [
+          "Dynolyze 2WD Hub Dyno Small",
+          gridjs.html(`<img src="assets/dynolyze.png" width="160">`),
+          "3500",
+          "3000",
+          "From Euro $31,500 (Excluding accessories and cooling components)"
+        ],
+  
+        [
+          "MAE Hub Dyno (DC Bus VFD package)",
+          gridjs.html(`<img src="assets/mae.jpg" width="160">`),
+          "Customised to FSAE specifications (80kW, 2000 rpm)",
+          "-",
+          "USD $750,000 – 800,000"
+        ]
+      ],
+  
+      sort: false,
+      allowHtml: true,
+  
+      style: {
+        table: {
+          "font-size": "14px",
+          "margin-top": "20px"
+        },
+        th: {
+          "white-space": "nowrap",   /* prevent header wrapping */
+          "font-weight": "bold"
+        },
+        td: {
+          "vertical-align": "top",
+          "padding": "12px",
+          "white-space": "normal",   /* ENABLE wrapping */
+          "word-break": "break-word" /* wrap long strings */
+        }
+      }
+    }).render(document.getElementById("commercial-dyno-table"));
+  </script>
+  
+  
+    </main>
+  </div>
+</body>
+</html>
