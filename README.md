@@ -46,4 +46,4 @@ The interactive website and report include:
 
 View the full project here:
 
-👉 https://kirito085.github.io/CDE4301/
+👉 https://justinchai27.github.io/CDE4301/
