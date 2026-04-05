@@ -139,11 +139,10 @@
     <main class="content">
     <div class="hero-panel">
       <div class="hero-copy">
-        <p class="hero-eyebrow">NUS FSAE EV | Engineering Report</p>
+        <p class="hero-eyebrow">CDE4301: NUS FSAE EV Dyno | Final Report</p>
         <h1>Design and Development of the NUS FSAE Dynamometer</h1>
         <p class="hero-summary">
-          Phase 1 focuses on the structural frame, mounting flange, cooling layout, and validation of a
-          compact hub-mounted dynamometer for the NUS Formula SAE electric vehicle team.
+          Phase 1 focuses on the structural frame, mounting flange, cooling layout, and validation of a compact hub-mounted dynamometer for the NUS Formula Society of Automotive Engineers Electric Vehicle (FSAE EV) team.
         </p>
       </div>
     </div>
@@ -171,35 +170,19 @@
     <div id="abstract">
       <h2>Abstract</h2>
       <p>
-        Our project aims to design and develop a hub-mounted dynamometer (dyno) for 
-        the NUS Formula Society of Automotive Engineers Electric Vehicle (FSAE EV). 
-        A dyno measures the torque and power output of the car at different rotation 
-        speeds. This provides quantitative data on the overall car performance under 
-        controlled conditions and can be used to simulate track conditions in subsequent 
-        iterations.
+        Our project aims to design and develop a hub-mounted dynamometer (dyno) for the NUS FSAE EV team. A dyno measures the torque and power output of the car at different rotation speeds, providing quantitative data on the overall car performance under controlled conditions and simulate track conditions in future.
       </p>
       <p>
-        Our key constraints include a limited electrical engineering background, a 
-        $1600 budget, and limited workshop space. To address our limited knowledge 
-        of Electrical Engineering, we will focus on the dynamometer’s structural 
-        frame, wheel-hub mount, and cooling system in this phase of the project, 
-        ensuring that the dyno is compact, cost-effective, and safe to run in the 
-        NUS FSAE workshop.
+        Our key constraints include our limited electrical engineering background, a $1600 budget, and limited workshop space. To address our limited knowledge of Electrical Engineering, we focused on the dynamometer’s structural frame, wheel-hub mount, and cooling system in phase 1 of the project, ensuring that the dyno is compact, cost-effective, and safe to run in the NUS FSAE workshop.
       </p>
       <p>
-        Additionally, we will use the EMRAX 228 motor as the dyno’s absorption motor, 
-        as it is readily available in the FSAE workshop and compact, aligning with 
-        our user needs and constraints to develop a cost-efficient, portable dyno.
+        Additionally, we will use the EMRAX 228 motor (from the FSAE EV) as the dyno’s absorption motor, as it is readily available in the FSAE workshop and compact, aligning with our user needs and constraints to develop a cost-efficient, portable dyno.
       </p>
       <p>
-        Expected deliverables in Semester I include the complete CAD of a compact, 
-        safe, and modular dyno layout, demonstrating feasibility and layout 
-        considerations. This design will be sent for fabrication before Semester 2.
+        Expected deliverables in Semester 1 include the complete CAD of a compact, safe, and modular dyno layout, demonstrating feasibility and layout considerations. This design will be sent for fabrication in Semester 2.
       </p>
       <p>
-        Expected deliverables in Semester II include an assembled and validated dyno 
-        prototype based on Sem I CAD, mounted to the FSAE EV wheel hub and supported 
-        by structural analysis, cooling system testing, and proof of concept work.
+        Expected deliverables in Semester 2 include an assembled and validated dyno prototype based on Sem 1 design, mounted to the FSAE EV wheel hub and supported by structural analysis and cooling system analysis as a proof of concept.
       </p>
     </div>
     <sl-divider></sl-divider>
@@ -225,7 +208,7 @@
       ></image-component>
 
       <p>
-        The NUS FSAE EV is a formula-style EV, with its overall dimensions and ride height being smaller and lower than road cars, respectively. It is also mounted with non-standard wheel hubs as compared to road cars. The FSAE EV is powered by a single electric motor, EMRAX 228, to the rear wheels, producing high torque at low rotation per minute (rpm), with a peak output power of 124kw. However, the car is limited to 80 kilowatts (kW) in power and a maximum of 2000 rpm based on FSAE competition rules.
+        The NUS FSAE EV is a formula-style EV, with its overall dimensions and ride height being smaller and lower than road cars. It is also mounted with non-standard wheel hubs as compared to road cars. The FSAE EV is powered by a single electric motor, EMRAX 228, to the rear wheels, producing high torque at low rotation per minute (rpm), with a peak output power of 124kw. However, the car is limited to 80 kilowatts (kW) in power and a maximum of 2000 rpm based on FSAE competition rules.
       </p>
     </div>
 
@@ -233,21 +216,21 @@
     <div id="problem-statement">
       <h3>1.2 Problem Statement</h3>
       <p>
-        Current in-market dyno systems are expensive, bulky, and mainly designed for road cars. These commercial dynos are not suitable for the FSAE team because of the significant difference in dimensions, height, and wheel hub configuration. Moreover, commercial dynos require a lot of space for both operation and storage, which exceeds the capacity of the limited space in the FSAE workshop. Finally, given the high cost of these dynos and the team’s limited testing frequency (approximately twice per year), it is difficult to justify the return on investment of purchasing a commercial dyno.
+        Current in-market dyno systems are expensive, bulky, and mainly designed for road cars. These commercial dynos are not suitable for the FSAE team due to the significant difference in dimensions, height, and wheel hub configuration. Moreover, commercial dynos require a lot of space for both operation and storage, which exceeds the capacity of the limited space in the FSAE workshop. Finally, given the high cost of these dynos and the team’s limited testing frequency (approximately twice per year), it is difficult to justify the return on investment of purchasing a commercial dyno.
       </p>
     </div>
 
     <!-- ====== 1.3 USER NEEDS ====== -->
     <div id="user-needs">
       <h3>1.3 User Needs</h3>
-      <p>From interviews with the FSAE team, our design criteria include:</p>
+      <p>From our interviews with the team, our design criteria include:</p>
 
       <ul>
-        <li><strong>Cost-effective:</strong> Lower cost than purchasing a commercial dyno.</li>
+        <li><strong>Cost-effective:</strong> Lower cost than commercial dyno.</li>
         <li><strong>Compact and light:</strong> Easy to store; stackable if needed.</li>
-        <li><strong>Minimal setup complexity:</strong> Plug-and-play, simple mounting.</li>
+        <li><strong>Minimal setup complexity:</strong> Plug-and-play with simple mounting.</li>
         <li><strong>Portable:</strong> Easy transportation within workshop.</li>
-        <li><strong>Stable and strong:</strong> Must withstand vehicle torque and weight.</li>
+        <li><strong>Stable and strong:</strong> Withstand vehicle torque and weight.</li>
         <li><strong>Safe to operate:</strong> Secure hub-to-dyno mounting.</li>
         <li><strong>Reliable:</strong> Capable of repeated runs with low maintenance.</li>
       </ul>
@@ -257,7 +240,7 @@
     <div id="constraints">
       <h3>1.4 Constraints</h3>
       <p>
-        One of our key constraints when embarking on the project is the limited knowledge and experience in electrical engineering, which is crucial when developing the dyno’s electrical component to output torque and power figures of the vehicle. Additionally, the limited workshop space and budget ($1600) also restrict the size and the components to be used in the dyno.  
+        Our main constraint when embarking on the project is the limited knowledge and experience in electrical engineering, which is crucial when developing the dyno’s electrical component to meausure the torque and power figures of the vehicle. Other constraints include the limited workshop space and budget ($1600), restricting the size and components used in the dyno.  
       </p>
     </div>
 
@@ -274,23 +257,11 @@
   </p>
 
   <p>
-    As explained in Section 1.2, commercial dynos are unsuitable for the FSAE 
-    team, leading to the decision to develop a custom in-house dyno. This project 
-    spans several years, with each phase focusing on a different aspect of the 
-    dyno’s development. A tentative description of each phase’s focus is shown 
-    in Figure&nbsp;2.
+    As explained in our problem statement (Section 1.2), commercial dynos are unsuitable for the FSAE team. We decided to develop a custom in-house dyno, a project spanning across several years, each phase focusing on a different aspect of the dyno’s development. A tentative description of each phase’s focus is shown in Figure&nbsp;2.
   </p>
 
   <p>
-    As our backgrounds are in Mechanical and Biomedical Engineering, with limited 
-    experience in Electrical Engineering, our project supervisor tasked us to 
-    work on the dyno’s frame structure, mounting between the motor and the FSAE 
-    EV, and the dyno’s cooling system in Phase&nbsp;1. In Phase&nbsp;2, students 
-    with stronger electrical backgrounds will further develop the electrical 
-    components of the dyno and build a complete interface with the EMRAX 228 to 
-    accurately measure the EV’s power output. In Phase&nbsp;3, the dyno can be 
-    scaled up and mounted to two rear wheels, or eventually all four wheels when 
-    the FSAE EV transitions to a four-wheel-drive configuration.
+    As our backgrounds are in Mechanical and Biomedical Engineering, with limited experience in Electrical Engineering, our project supervisor tasked us to work on the dyno’s frame structure, mounting between the motor and the car, and the dyno’s cooling system in Phase&nbsp;1. In Phase&nbsp;2, students with stronger electrical backgrounds will further develop the electrical components of the dyno and build a complete interface with the EMRAX 228 to accurately measure the EV’s power output. In Phase&nbsp;3, the dyno can be scaled up and mounted to two rear wheels, or eventually to four wheels when the FSAE EV transitions to a four-wheel-drive configuration.
   </p>
 
   <!-- ===== FIGURE 2 (uploaded arrow diagram) ===== -->
@@ -497,16 +468,11 @@
 </p>
 
   <p>
-    Additionally, it is preferred that to use a motor that has 150% to 200% of the car’s maximum 
-    power to ensure safe operation of the dyno. Since one dyno will be mounted to on each of the rear wheels, the 
-    maximum power that one dyno experiences is half of the competition power limit (80kW) at 40kW. Therefore, an 80kW 
-    motor for the hub dyno is preferred to provide sufficient headroom and safety. Commercial three-phase 80 kW motors are expensive (US$300-400), big and heavy (about 150kg), and hence unable to fulfil the design criteria.
+    Additionally, it is preferred that to use a motor that has 150% to 200% of the car’s maximum power to ensure safety during the dyno's operation As one dyno will be mounted onto each of the rear wheels, the maximum power that one dyno experiences is half of the competition power limit (80kW) at 40kW. Therefore, an 80kW motor for the hub dyno is preferred to provide sufficient headroom and safety. Commercial three-phase 80 kW motors are expensive (US$300-400), big and heavy (about 150kg), and hence unable to fulfil the design criteria.
   </p>
 
   <p>
-    When sourcing for alternative motors and speaking with the FSAE team, we found that they have old spare EMRAX 228 
-    motors (Axial Flux) that are no longer in use. We decided to choose the EMRAX 228 as our dyno motor due to these 
-    reasons:
+    When sourcing for alternative motors and speaking with the FSAE team, we found that they have old spare EMRAX 228 motors (Axial Flux) that are no longer in use. We decided to choose the EMRAX 228 as our dyno motor due to these reasons:
   </p>
 
   <ul>
@@ -584,7 +550,7 @@
       <li>Compact. (Takes up minimal space)</li>
       <li>Strong and stable. (Achieve a minimum Factor of Safety of 2)</li>
       <li>Serviceability and manufacturability. (Detachable panels)</li>
-      <li>Modular design for future phases. (Electronic components)</li>
+      <li>Modular design for future phases. (For electronic components)</li>
     </ul>
   </div>
 
@@ -710,7 +676,7 @@
       the motor and the cooling components, leading to the motor and reservoir being mounted on the external face of the 
       frame. This is not ideal as it causes the frame to be imbalanced and unstable, making it more prone to topple. The 
       rotating motor is also exposed, increasing the safety risk of the operator or equipment touching the motor when 
-      rotating. Figure 8 is a CAD of our 1st iteration.
+      rotating. Figure 8 is the CAD of our 1st iteration.
     </p>
 
     <!-- FIGURE 8 -->
@@ -795,7 +761,7 @@
     <image-component
       tag="fig11"
       source="assets/figure11_iteration4.png"
-      subtitle="Figure 11: CAD of Dyno’s Frame (4th Iteration)"
+      subtitle="Figure 11: CAD of Dyno’s Frame with Interaction 3D Viewer (4th Iteration)"
     ></image-component>
 
   </div>
@@ -971,7 +937,7 @@
   <image-component
     tag="fig15"
     source="assets/figure15_mounting_iteration4.png"
-    subtitle="Figure 15: CAD of Mounting (4th Iteration)"
+    subtitle="Figure 15: CAD of Mounting with Interactive 3D Viewer (4th Iteration)"
   ></image-component>
 
   <p>
@@ -1006,7 +972,7 @@
   <image-component
     tag="fig16"
     source="assets/figure16_force_calculation.png"
-    subtitle="Figure 16: Illustration of how the forces on the dyno’s frame are calculated"
+    subtitle="Figure 16: Forces on Dyno Illustration and Calculations"
   ></image-component>
 
   <p>
@@ -1141,10 +1107,9 @@
     <h3>4.1 Lack of space for electrical components and limited electrical integration</h3>
     <p>
       The first limitation arises from the team’s limited electrical expertise. While we are primarily focused 
-      on the mechanical construction and cooling performance, the integration of electronics, such as motor 
+      on the mechanical strength, stability, and cooling performance, the integration of electronics, such as motor 
       controllers and data logging hardware has not been fully developed, hence we are unable 
-			to accurately estimate the space required for these electrical parts. However, our design reserved potential expansion 
-			space at the top or rear of the frame, hence further redesign can be required to accommodate proper cable routing.
+			to accurately estimate the space required for these electrical parts. However, our design remains modular for potential expansion from the top or rear of the frame, hence further redesign can accommodate new components in subsequent phases.
     </p>
   </div>
 
@@ -1152,17 +1117,10 @@
   <div id="limitation-4-2">
     <h3>4.2 Lack of a counter-balance</h3>
     <p>
-      Another limitation is the lack of a counter-balance or anchoring system to prevent the dyno from tipping under 
-      load. The current frame design is compact and optimized for portability, but this also reduces its footprint and 
-      the stability margin against overturning. The reaction torque from the motor during operation generates a 
-      moment that could lift or rotate the assembly, hence the need for 
-			a dedicated stabilizing structure or ballast system is necessary. 
+      Another limitation is the lack of a counter-balance or anchoring system to prevent the dyno from tipping under load. The current frame design is compact and portable, but also lowers its footprint and stability margin against overturning. The reaction torque from the motor during operation could generate a moment which lifts or rotates the assembly, hence the potential need for a stabilizing structure or ballast system. 
 		</p>
 		<p>
-      However, the magnitude of the required torque resistance cannot be accurately determined at this stage, as 
-      CAD-based FEA is insufficient for predicting rigid-body tipping, which depends on mass distribution. Therefore, 
-      the assessment of tipping forces and the design of an appropriate counter-balance mechanism will be conducted
-			next semester, with the physical prototype and a more accurate mass properties.
+      The magnitude of the required torque resistance cannot be accurately determined at this stage, as CAD-based FEA is insufficient to predict rigid-body tipping based on mass distribution. Therefore, the assessment of tipping forces and the design of an appropriate counter-balance mechanism will be conducted next semester, with the physical prototype and its actual mass properties.
     </p>
   </div>
 
@@ -1188,15 +1146,14 @@
   <h2>5. Next Steps in Sem II:</h2>
 
   <p>
-    Next semester, our focus will be more on testing and fabricating the current model, the components will be sent 
-    out to manufacture during the semester break.
+    Next semester, our focus will be more on fabricating and testing the current model.
   </p>
 
   <!-- FIGURE 22 -->
   <image-component
     tag="fig22"
     source="assets/gantt_chart.png"
-    subtitle="Figure 22: Gantt Chart for Next Semester"
+    subtitle="Figure 22: Gantt Chart for Semester 2"
   ></image-component>
 
   <!-- TABLE TITLE -->
@@ -2782,12 +2739,12 @@
         columns: ["Focus Area", "Purpose", "Actions"],
         data: [
           ["Frame Fabrication", "Physically assemble the dyno set-up and layout.", "Construct a welded frame based on the finalised CAD."],
+		  ["Cooling System Analysis", "Verify that the cooling system is sufficient to cool the temperature of the dyno.", "Heat gun to heat up the area in the dyno, then switch on the cooling system to lower to a specific temperature."],
+		  ["Counter-Balance Design", "Design an element to ensure the dyno's stability at maximum torque.", "Calculate the moment and design an effective counter-balance system."],
           ["Component Integration", "Validate the alignment and layout.", "Mount the motor and cooling components to the frame."],
-          ["Flow simulation", "Improve airflow and cooling efficiency before physical testing.", "Perform CFD to model air and coolant flow, refine radiator and pump placement, and adjust ducting for better thermal performance."],
-          ["Stability testing", "Assess stability under known external loading.", "Apply a 25 kg load at 1 m from the centre and evaluate for tipping; if unstable, design a counter-balance beam and retest."],
-          ["Cooling System Validation", "Verify that the cooling system is sufficient to cool the temperature of the dyno.", "Heat gun to heat up the area in the dyno, then switch on the cooling system to lower to a specific temperature."],
+          ["Stability and Balance testing", "Assess stability under known external loading.", "Apply a load at a known distance beam attached to the centre and evaluate for tipping; if unstable, design or adjust a counter-balance beam and retest."],
+		  ["FEA Validation", "Validate FEA results with experimental results to ensure that trend is consistent and explain the potential deviation." ,"Cross-check between physical experimentation result with FEA results."],
           ["Fatigue and vibration simulation.", "Evaluate long-term structural durability and dynamic response.", "Conduct modal and harmonic analysis on the frame and flange, identify peak vibratory stresses, and verify fatigue life under cyclic torque."],
-          ["Strain gauge testing.", "Validate real-world strain/stress predictions against FEA.", "Mount strain gauges at critical regions of the flange and frame, collect data during controlled loading, and compare with simulation results."],
           ["Documentation / Final Report", "Ensure all design, testing, and simulation processes are properly recorded.", "Compile technical drawings, FEA reports, CFD results, and test data into organized folders; Draft the final report."]
         ],
         pagination: false
