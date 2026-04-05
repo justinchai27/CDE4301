@@ -1457,7 +1457,7 @@
       future, contributes significantly to the weight. Our key design consideration was to ensure that
       the dyno motor mounting hole aligns with the wheel hub so that it can be joined accurately, using
       the flange, while remaining portable in the FSAE workshop due to limited space. We evaluated 3
-      options to increase the dyno’s height, as summarisd in Figure 26.
+      options to increase the dyno’s height, as summarised in Figure 29.
     </p>
 
     <table style="width:100%; border-collapse:collapse; font-size:14px;">
@@ -1547,7 +1547,7 @@
         img-style="width:100%; max-height:260px; object-fit:contain;"
       ></image-component>
     <p>
-      Our final design decision was the adjustable leg caster wheel, as shown in Figure 25. They allow
+      Our final design decision was the adjustable leg caster wheel, as shown in Figure 32. They allow
       for height and tilt adjustments to ensure proper alignment of the dyno’s flange and the car’s wheel
       hub, accommodating both the car’s camber and the floor’s unevenness.
     </p>
@@ -1683,8 +1683,7 @@
       The objective was to assess if the frame could sustain the applied moment without structural
       failure. The frame is clamped firmly to the workbench, eliminating the possibility of tipping and
       isolating the frame's structural response from its stability. A 0.5m and a maximum downward force
-      of 45kg were used to simulate the 220 Nm as described in the above section, as shown in Figures 30
-      and 31.
+      of 45kg were used to simulate the 220 Nm as described in the above section, as shown in Figure 36.
     </p>
 
     <p>
@@ -1708,7 +1707,7 @@
     <ul>
       <li>Install the T-slot beam onto the motor mounting holes and place a clamp (with scale between the clamp and the beam) at the end of the beam.</li>
       <li>Mount dial gauges at FEA-identified high-stress points (DG3 and DG4). Zero all gauges before loading.</li>
-      <li>Apply downward force incrementally in steps as defined in Figure 32, recording dial gauge readings at each step until the maximum torque is achieved (220Nm).</li>
+      <li>Apply downward force incrementally in steps as defined in Figure 37, recording dial gauge readings at each step until the maximum torque is achieved (220Nm).</li>
       <li>Remove weights incrementally in the same steps, recording dial gauge readings during unloading.</li>
       <li>After full unloading, inspect the frame for cracks, weld failures, panel buckling, and permanent deformation.</li>
     </ul>
@@ -1726,7 +1725,7 @@
 
     <p>
       To improve measurement reliability, the experiment was repeated three times under identical
-      conditions, and the results presented in Figure 32 represent the average values of the recorded
+      conditions, and the results presented in Figure 37 represent the average values of the recorded
       data.
     </p>
 
@@ -1811,7 +1810,7 @@
     <p>
       The simulation case with downward force accounts for additional loads from ¼ of the vehicle weight
       and the motor weight. These loads were not directly replicated in the experimental setup due to
-      practicality. The primary effect, from Figure 33, shows a shift of the y-intercept, from 0 to
+      practicality. The primary effect, from Figure 39, shows a shift of the y-intercept, from 0 to
       0.032, without significantly changing the graph’s gradient (0.04). This shows that the additional
       static loading contributes to initial deformation but does not affect the inherent structural
       stiffness.
@@ -1833,7 +1832,7 @@
 
     <p>
       Although the FEA predicts the global maximum deflection at the DG3 location, the experimental data
-      in Figure 33 showed a slightly higher deflection was observed at the DG4 position. This can be
+      in Figure 39 showed a slightly higher deflection was observed at the DG4 position. This can be
       caused by the non-ideal physical experimental setup, including imperfectly manufactured geometry,
       uneven stiffness distribution due to fabrication, and slight differences in dial gauge placement.
       These can locally change the maximum deformation location but are unlikely to significantly affect
@@ -1860,9 +1859,9 @@
     <p>
       Instead of clamping the frame to the bench, as done in Section 8.1, a downward force of 795N was
       applied to the frame to simulate the weight of the car and motor. A weighing scale was placed under
-      each side of the frame’s wheels to monitor the shift in weight distribution, as shown in Figure 35,
+      each side of the frame’s wheels to monitor the shift in weight distribution, as shown in Figure 40,
       as the weighted moment arm was applied. The moment arm was set up as described in Section 8, using
-      the same T-slot beam, scale, and clamp, as shown in Figure 36. As the moment increases, the dyno’s
+      the same T-slot beam, scale, and clamp, as shown in Figure 40. As the moment increases, the dyno’s
       weight is redistributed across the four wheels, increasing the load on the left scale while
       reducing the right scale reading. A right scale reading approaching zero indicates that the frame is
       near the tipping point. The test was repeated across multiple counterbalance beam lengths of 0m,
@@ -2041,7 +2040,7 @@
   <h2>9. Simulation</h2>
 
   <p>
-    Simulation was conducted to evaluate the dyno’s structural behaviour under operational conditions.
+    Further simulation was conducted to evaluate the dyno’s structural behaviour under operational conditions in the long-run, ensuring that the dyno is suitable for multiple rounds of testing without constantly needing repairs or replacement.
     Modal analysis ensures that the frame does not resonate within the operating frequency range,
     preventing excessive vibration and measurement errors, while fatigue analysis assesses the flange’s
     durability under repeated torque loading to ensure long-term reliability and safe operation.
@@ -2202,7 +2201,7 @@
     <image-component
       tag="fig51"
       source="assets/figure47_final_dyno_iii.jpg"
-      subtitle="Figure 51: Final Dyno III"
+      subtitle="Figure 51: Final Dyno II"
       img-style="width:100%; height:280px; object-fit:cover;"
       figure-style="justify-content:flex-start;"
     ></image-component>
@@ -2210,14 +2209,14 @@
 
   <p>
     Our project has completed and documented the design, fabrication, and testing of Phase 1 of the NUS
-    FSAE hub-mounted dynamometer, as shown in Figures 45 to 47, covering the structural frame,
+    FSAE hub-mounted dynamometer, as shown in Figures 49 to 51, covering the structural frame,
     wheel-hub mounting flange, and cooling system.
   </p>
 
   <p>
     The dyno’s frame comprises a welded AISI 1010 steel truss structure with aluminium panels, balancing
     structural strength, modularity, and ease of modification. FEA simulations calculated a minimum
-    factor of safety greater than 3, under the expected load of 795 N downwards and 220 Nm of torque.
+    factor of safety greater than 3, under the expected load of 795 N downwards and the motor's maximum torque of 220 Nm.
     Modal analysis showed the frame's lowest natural frequency is 257.19 Hz, approximately 10 times
     higher than the frequency of 26.11 Hz at the car's top speed, confirming that resonance is unlikely
     within the operating range.
