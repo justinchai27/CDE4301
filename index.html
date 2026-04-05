@@ -1164,6 +1164,9 @@
     <div id="next-steps-table"></div>
   </table-component>
 </div>
+<p style="text-align:center; font-style:italic; margin-top:10px;">
+	Figure 23: Semester 2 Overview Table
+</p>
 <sl-divider></sl-divider>
 
 <!-- ========================= -->
@@ -1173,20 +1176,20 @@
   <h2>6. Additional Design Elements</h2>
 
   <div id="cooling-selection">
-    <h3>6.1 Cooling Selection</h3>
+    <h3>6.1 Cooling System Analysis</h3>
 
     <p>
       The EMRAX 228 motor used in the dynamometer supports three cooling configurations: air cooling,
-      liquid cooling, and combined cooling. According to the manufacturer datasheet, the liquid-cooled
+      liquid cooling, and combined cooling. The motor's datasheet indicates that the liquid-cooled
       configuration requires a minimum coolant flow rate of 6 L/min, with a maximum coolant temperature
-      of 50 °C and ambient temperature not exceeding 30 °C. The datasheet also states that the motor can
+      of 50 °C and ambient temperature not exceeding 30 °C. It also states that the motor can
       achieve up to 96% efficiency, although the actual performance depends on the motor configuration,
       drive cycle, controller capability, and thermal boundary conditions.
     </p>
 
     <p>
       For the present dynamometer design, liquid cooling was selected as the most suitable approach.
-      Compared with normal vehicle operation, the dyno may subject the motor to relatively high and
+      Compared with normal vehicle operation, the dyno's motor will experience relatively high and
       sustained loading during testing, which can lead to greater thermal accumulation. Air cooling is
       mechanically simpler, but its heat removal capability is lower and relies strongly on sufficient
       airflow around the motor. Combined cooling offers the highest cooling capability, but it also
@@ -2739,7 +2742,7 @@
         columns: ["Focus Area", "Purpose", "Actions"],
         data: [
           ["Frame Fabrication", "Physically assemble the dyno set-up and layout.", "Construct a welded frame based on the finalised CAD."],
-		  ["Cooling System Analysis", "Verify that the cooling system is sufficient to cool the temperature of the dyno.", "Heat gun to heat up the area in the dyno, then switch on the cooling system to lower to a specific temperature."],
+		  ["Cooling System Analysis", "Assess and verify that the cooling system is sufficient to cool the temperature of the dyno.", "Analyze the datasheet on what is required for the motor cooling, and prove that the cooling is sufficient for the dyno's operation."],
 		  ["Counter-Balance Design", "Design an element to ensure the dyno's stability at maximum torque.", "Calculate the moment and design an effective counter-balance system."],
           ["Component Integration", "Validate the alignment and layout.", "Mount the motor and cooling components to the frame."],
           ["Stability and Balance testing", "Assess stability under known external loading.", "Apply a load at a known distance beam attached to the centre and evaluate for tipping; if unstable, design or adjust a counter-balance beam and retest."],
