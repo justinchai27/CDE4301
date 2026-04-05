@@ -73,20 +73,6 @@
             <sl-tree-item><a href="#fea-flange">3.6 FEA Simulation Results (Flange)</a></sl-tree-item>
           </sl-tree-item>
       
-          <!-- 4. Limitations -->
-          <sl-tree-item expanded>
-            <a href="#limitations">4. Limitations of our Design</a>
-      
-            <sl-tree-item><a href="#limitation-4-1">4.1 Lack of Electrical Space</a></sl-tree-item>
-            <sl-tree-item><a href="#limitation-4-2">4.2 Lack of a Counter-balance</a></sl-tree-item>
-            <sl-tree-item><a href="#limitation-4-3">4.3 Manufacturing Accuracy</a></sl-tree-item>
-          </sl-tree-item>
-      
-          <!-- 5. Next Steps -->
-          <sl-tree-item>
-            <a href="#next-steps-sem2">5. Next Steps in Sem II</a>
-          </sl-tree-item>
-
           <sl-tree-item expanded>
             <a href="#additional-design-elements">6. Additional Design Elements</a>
 
@@ -127,8 +113,11 @@
             <a href="#references">References</a>
           </sl-tree-item>
 
-          <sl-tree-item>
+          <sl-tree-item expanded>
             <a href="#appendix">Appendix</a>
+
+            <sl-tree-item><a href="#appendix-limitations">Appendix F: Limitations of Our Design</a></sl-tree-item>
+            <sl-tree-item><a href="#appendix-next-steps">Appendix G: Next Steps in Sem II</a></sl-tree-item>
           </sl-tree-item>
         </sl-tree>
       </div>
@@ -1094,80 +1083,6 @@
     taking the vehicle’s weight rather than the vehicle taking the dyno load.
   </p>
 </div>
-<sl-divider></sl-divider>
-
-<!-- ========================= -->
-<!--      4. LIMITATIONS       -->
-<!-- ========================= -->
-<div id="limitations">
-  <h2>4. Limitations of our design:</h2>
-
-  <!-- 4.1 -->
-  <div id="limitation-4-1">
-    <h3>4.1 Lack of space for electrical components and limited electrical integration</h3>
-    <p>
-      The first limitation arises from the team’s limited electrical expertise. While we are primarily focused 
-      on the mechanical strength, stability, and cooling performance, the integration of electronics, such as motor 
-      controllers and data logging hardware has not been fully developed, hence we are unable 
-			to accurately estimate the space required for these electrical parts. However, our design remains modular for potential expansion from the top or rear of the frame, hence further redesign can accommodate new components in subsequent phases.
-    </p>
-  </div>
-
-  <!-- 4.2 -->
-  <div id="limitation-4-2">
-    <h3>4.2 Lack of a counter-balance</h3>
-    <p>
-      Another limitation is the lack of a counter-balance or anchoring system to prevent the dyno from tipping under load. The current frame design is compact and portable, but also lowers its footprint and stability margin against overturning. The reaction torque from the motor during operation could generate a moment which lifts or rotates the assembly, hence the potential need for a stabilizing structure or ballast system. 
-		</p>
-		<p>
-      The magnitude of the required torque resistance cannot be accurately determined at this stage, as CAD-based FEA is insufficient to predict rigid-body tipping based on mass distribution. Therefore, the assessment of tipping forces and the design of an appropriate counter-balance mechanism will be conducted next semester, with the physical prototype and its actual mass properties.
-    </p>
-  </div>
-
-  <!-- 4.3 -->
-  <div id="limitation-4-3">
-    <h3>4.3 Manufacturing accuracy</h3>
-    <p>
-      Manufacturing accuracy of the motor-mounting plate is critical. If the machining tolerances of bolt circles and 
-      locating surfaces are not met, the motor may not align or may not even be mountable. This risk becomes more 
-      significant if the design is later expanded to support four wheels, where inconsistent plate geometry could lead 
-      to center-to-center misalignment, causing uneven loading between test stations. To mitigate these risks we can 
-      specify tighter dimensional tolerances on key interfaces like the bolt patterns. Additionally, fabricating a 
-      simple alignment jig or inspection fixture enables the plate geometry to be verified before installation.
-    </p>
-  </div>
-</div>
-<sl-divider></sl-divider>
-
-<!-- ========================= -->
-<!--     5. NEXT STEPS SEM II  -->
-<!-- ========================= -->
-<div id="next-steps-sem2">
-  <h2>5. Next Steps in Sem II:</h2>
-
-  <p>
-    Next semester, our focus will be more on fabricating and testing the current model.
-  </p>
-
-  <!-- FIGURE 22 -->
-  <image-component
-    tag="fig22"
-    source="assets/gantt_chart.png"
-    subtitle="Figure 22: Gantt Chart for Semester 2"
-  ></image-component>
-
-  <!-- TABLE TITLE -->
-  <h3>Detail Steps for Next Semester</h3>
-
-  <!-- TABLE (Grid.js) -->
-  <table-component subtitle="Table: Focus Area / Purpose / Actions">
-    <div id="next-steps-table"></div>
-  </table-component>
-<p style="text-align:center; font-style:italic; margin-top:10px;">
-	Figure 23: Semester 2 Overview Table
-</p>
-</div>
-
 <sl-divider></sl-divider>
 
 <!-- ========================= -->
@@ -2374,6 +2289,81 @@
                 <tr><td style="padding:10px; border:1px solid #ccc;">5</td><td style="padding:10px; border:1px solid #ccc;"><img src="assets/appendix_extract/image68.png" alt="Mode 5" style="max-width:100%; height:auto;"></td></tr>
               </tbody>
             </table>
+          </div>
+        </sl-details>
+
+        <sl-details id="appendix-limitations" summary="Appendix F: Limitations of Our Design">
+          <div class="appendix-panel">
+            <div id="limitations">
+              <h3>4. Limitations of our design:</h3>
+
+              <div id="limitation-4-1">
+                <h4>4.1 Lack of space for electrical components and limited electrical integration</h4>
+                <p>
+                  The first limitation arises from the team’s limited electrical expertise. While we are primarily focused
+                  on the mechanical strength, stability, and cooling performance, the integration of electronics, such as motor
+                  controllers and data logging hardware has not been fully developed, hence we are unable
+                  to accurately estimate the space required for these electrical parts. However, our design remains modular for
+                  potential expansion from the top or rear of the frame, hence further redesign can accommodate new components in
+                  subsequent phases.
+                </p>
+              </div>
+
+              <div id="limitation-4-2">
+                <h4>4.2 Lack of a counter-balance</h4>
+                <p>
+                  Another limitation is the lack of a counter-balance or anchoring system to prevent the dyno from tipping under load.
+                  The current frame design is compact and portable, but also lowers its footprint and stability margin against
+                  overturning. The reaction torque from the motor during operation could generate a moment which lifts or rotates the
+                  assembly, hence the potential need for a stabilizing structure or ballast system.
+                </p>
+                <p>
+                  The magnitude of the required torque resistance cannot be accurately determined at this stage, as CAD-based FEA is
+                  insufficient to predict rigid-body tipping based on mass distribution. Therefore, the assessment of tipping forces
+                  and the design of an appropriate counter-balance mechanism will be conducted next semester, with the physical
+                  prototype and its actual mass properties.
+                </p>
+              </div>
+
+              <div id="limitation-4-3">
+                <h4>4.3 Manufacturing accuracy</h4>
+                <p>
+                  Manufacturing accuracy of the motor-mounting plate is critical. If the machining tolerances of bolt circles and
+                  locating surfaces are not met, the motor may not align or may not even be mountable. This risk becomes more
+                  significant if the design is later expanded to support four wheels, where inconsistent plate geometry could lead
+                  to center-to-center misalignment, causing uneven loading between test stations. To mitigate these risks we can
+                  specify tighter dimensional tolerances on key interfaces like the bolt patterns. Additionally, fabricating a
+                  simple alignment jig or inspection fixture enables the plate geometry to be verified before installation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </sl-details>
+
+        <sl-details id="appendix-next-steps" summary="Appendix G: Next Steps in Sem II">
+          <div class="appendix-panel">
+            <div id="next-steps-sem2">
+              <h3>5. Next Steps in Sem II:</h3>
+
+              <p>
+                Next semester, our focus will be more on fabricating and testing the current model.
+              </p>
+
+              <image-component
+                tag="fig22"
+                source="assets/gantt_chart.png"
+                subtitle="Figure 22: Gantt Chart for Semester 2"
+              ></image-component>
+
+              <h4>Detail Steps for Next Semester</h4>
+
+              <table-component subtitle="Table: Focus Area / Purpose / Actions">
+                <div id="next-steps-table"></div>
+              </table-component>
+              <p style="text-align:center; font-style:italic; margin-top:10px;">
+                Figure 23: Semester 2 Overview Table
+              </p>
+            </div>
           </div>
         </sl-details>
       </div>
