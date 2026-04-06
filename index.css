@@ -73,6 +73,11 @@ body::before {
   width: 300px;
   height: calc(100vh - 36px);
   z-index: 999;
+
+  overflow-y: auto;
+ 
+  overflow-x: hidden;
+  
 }
 
 .sidebar-inner {
