@@ -136,7 +136,7 @@
         <p class="hero-eyebrow">CDE4301: NUS FSAE EV Dyno | Final Report</p>
         <h1>Design and Development of the NUS FSAE Dynamometer</h1>
         <p class="hero-summary">
-          Phase 1 focuses on the structural frame, mounting flange, cooling layout, and validation of a compact hub-mounted dynamometer for the NUS Formula Society of Automotive Engineers Electric Vehicle (FSAE EV) team.
+          Our project focuses on the structural frame, mounting flange, cooling layout, and validation of a compact hub-mounted dynamometer for the NUS Formula Society of Automotive Engineers Electric Vehicle (FSAE EV) team.
         </p>
       </div>
     </div>
@@ -148,7 +148,7 @@
 
     <div class="quick-links">
       <a href="#abstract">Abstract</a>
-      <a href="#section-3">Frame Design</a>
+      <a href="#section-3">Design</a>
       <a href="#testing">Testing</a>
       <a href="#simulation">Simulation</a>
       <a href="#conclusion">Conclusion</a>
@@ -167,16 +167,16 @@
         Our project aims to design and develop a hub-mounted dynamometer (dyno) for the NUS FSAE EV team. A dyno measures the torque and power output of the car at different rotation speeds, providing quantitative data on the overall car performance under controlled conditions and simulate track conditions in future.
       </p>
       <p>
-        Our key constraints include our limited electrical engineering background, a $1600 budget, and limited workshop space. To address our limited knowledge of Electrical Engineering, we focused on the dynamometer’s structural frame, wheel-hub mount, and cooling system in phase 1 of the project, ensuring that the dyno is compact, cost-effective, and safe to run in the NUS FSAE workshop.
+        The key constraints include our limited electrical engineering background, a $1600 budget, and limited workshop space. To address our limited knowledge of electrical engineering, we focused on the dynamometer’s structural frame, wheel-hub mount, and cooling system in phase 1 of the project, ensuring that the dyno is compact, cost-effective, and safe to run in the NUS FSAE workshop.
       </p>
       <p>
-        Additionally, we will use the EMRAX 228 motor (from the FSAE EV) as the dyno’s absorption motor, as it is readily available in the FSAE workshop and compact, aligning with our user needs and constraints to develop a cost-efficient, portable dyno.
+        Additionally, we used the EMRAX 228 motor (from the FSAE EV) as the dyno’s absorption motor, as it is readily available in the FSAE workshop and compact, aligning with our user needs and constraints to develop a cost-efficient, portable dyno.
       </p>
       <p>
-        Expected deliverables in Semester 1 include the complete CAD of a compact, safe, and modular dyno layout, demonstrating feasibility and layout considerations. This design will be sent for fabrication in Semester 2.
+        Expected deliverables for Semester 1 include the complete Computer Aided Design (CAD) of a compact, safe, and modular dyno layout, demonstrating feasibility and layout considerations. This design will be sent for fabrication in Semester 2.
       </p>
       <p>
-        Expected deliverables in Semester 2 include an assembled and validated dyno prototype based on Sem 1 design, mounted to the FSAE EV wheel hub and supported by structural analysis and cooling system analysis as a proof of concept.
+        Expected deliverables for Semester 2 include an assembled and validated dyno prototype based on Semester 1's design, mounted to the FSAE EV wheel hub, with structural and cooling system analysis as a proof of concept.
       </p>
     </div>
     <sl-divider></sl-divider>
@@ -185,10 +185,10 @@
     <div id="introduction">
       <h2>1. Introduction and Scope</h2>
       <p>
-        NUS FSAE team designs and builds a formula-style Electric Vehicle (EV) to compete in both local and international races. Currently, the team tests components such as the motor, battery, drivetrain, and transmission independently or conducts on-track tests near competition. However, the current method is unable to quantitatively evaluate the car’s overall performance and obtain data such as torque and power output across various rotational speeds, as well as drivetrain efficiency under controlled conditions. This limits the team’s ability to optimise its performance.
+        NUS FSAE team designs and builds a formula-style EV to compete in both local and international races. Currently, the team tests components such as the motor, battery, drivetrain, and transmission independently or conducts on-track tests near competition. However, the current method is unable to quantitatively evaluate the car’s overall performance and obtain data such as torque and power output across various rotational speeds, as well as drivetrain efficiency under controlled conditions. This limits the team’s ability to optimise its performance.
       </p>
       <p>
-        By developing a dyno system to measure and quantify these key performance parameters, such as torque and power, the team can obtain consistent and reliable data on the EV’s overall performance. The data enables them to run simulations for various track conditions, identify performance gaps, and optimise different components, hence improving the FSAE EV’s competitiveness in future competitions.  
+        By developing a dyno to measure and quantify these key performance parameters, such as torque and power, the team can obtain consistent and reliable data on the EV’s overall performance. The data enables them to run simulations for various track conditions, identify performance gaps, and optimise different components, hence improving the FSAE EV’s competitiveness in future competitions.  
       </p>
 
     <!-- ====== 1.1 BACKGROUND ====== -->
@@ -210,7 +210,7 @@
     <div id="problem-statement">
       <h3>1.2 Problem Statement</h3>
       <p>
-        Current in-market dyno systems are expensive, bulky, and mainly designed for road cars. These commercial dynos are not suitable for the FSAE team due to the significant difference in dimensions, height, and wheel hub configuration. Moreover, commercial dynos require a lot of space for both operation and storage, which exceeds the capacity of the limited space in the FSAE workshop. Finally, given the high cost of these dynos and the team’s limited testing frequency (approximately twice per year), it is difficult to justify the return on investment of purchasing a commercial dyno.
+        Current in-market dyno systems are expensive, bulky, and mainly designed for road cars. These commercial dynos are unsuitable for the FSAE team due to the significant difference in dimensions, height, and wheel hub configuration. Moreover, commercial dynos require a lot of space for both operation and storage, which exceeds the capacity of the limited space in the FSAE workshop. Finally, given the high cost of these dynos and the team’s limited testing frequency (approximately twice per year), it is difficult to justify the return on investment of purchasing a commercial dyno.
       </p>
     </div>
 
@@ -251,18 +251,18 @@
   </p>
 
   <p>
-    As explained in our problem statement (Section 1.2), commercial dynos are unsuitable for the FSAE team. We decided to develop a custom in-house dyno, a project spanning across several years, each phase focusing on a different aspect of the dyno’s development. A tentative description of each phase’s focus is shown in Figure&nbsp;2.
+    As explained in our problem statement (Section 1.2), commercial dynos are unsuitable for the FSAE team. We decided to develop a custom in-house dyno, a project spanning across several years. Each phase focuses on different aspect of the dyno’s development, and a tentative description of each phase’s focus is shown in Figure&nbsp;2.
   </p>
 
   <p>
-    As our backgrounds are in Mechanical and Biomedical Engineering, with limited experience in Electrical Engineering, our project supervisor tasked us to work on the dyno’s frame structure, mounting between the motor and the car, and the dyno’s cooling system in Phase&nbsp;1. In Phase&nbsp;2, students with stronger electrical backgrounds will further develop the electrical components of the dyno and build a complete interface with the EMRAX 228 to accurately measure the EV’s power output. In Phase&nbsp;3, the dyno can be scaled up and mounted to two rear wheels, or eventually to four wheels when the FSAE EV transitions to a four-wheel-drive configuration.
+    As our backgrounds are in Mechanical and Biomedical Engineering, with limited experience in electrical engineering, our project supervisor tasked us to work on the dyno’s frame structure, mounting between the motor and the car, and the dyno’s cooling system in Phase&nbsp;1. In Phase&nbsp;2, students with stronger electrical backgrounds will further develop the electrical components of the dyno and build a complete interface with the EMRAX 228 to accurately measure the EV’s power output. In Phase&nbsp;3, the dyno can be scaled up and mounted to two rear wheels, or eventually to four wheels when the FSAE EV transitions to a four-wheel-drive configuration.
   </p>
 
   <!-- ===== FIGURE 2 (uploaded arrow diagram) ===== -->
   <image-component
     tag="fig2"
     source="assets/figure2_project_outline.png"
-    subtitle="Figure 2: FSAE Dyno Project Outline"
+    subtitle="Figure 2: FSAE Dyno Full Project Outline"
   ></image-component>
 
   <p><strong>In Phase 1, we will focus on the following aspects:</strong></p>
@@ -274,7 +274,7 @@
     <li>Enable modularity for future phases (e.g., electrical components in Phase&nbsp;2).</li>
   </ul>
 </div>
-
+	</div>
 <!-- ========================= -->
 <!--      2. LITERATURE REVIEW -->
 <!-- ========================= -->
