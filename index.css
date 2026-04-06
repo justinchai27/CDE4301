@@ -380,6 +380,8 @@ code {
   border-radius: 18px;
   background: linear-gradient(180deg, #f8fbfd, #f1f6fb);
   border: 1px solid rgba(10, 92, 171, 0.1);
+  max-height: calc(100vh - 160px); /* Adjusts height based on screen size */
+  overflow-y: auto;
 }
 
 .table-of-content a {
