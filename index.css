@@ -407,6 +407,13 @@ code {
   text-decoration: none;
 }
 
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px; /* Adjust distance from bottom */
+  right: 30px;  /* Adjust distance from right side */
+  z-index: 9999 !important; /* This forces it above ALL other panels */
+}
+
 .scroll-to-top::part(base) {
   box-shadow: 0 14px 30px rgba(10, 92, 171, 0.28);
 }
@@ -502,6 +509,11 @@ code {
 }
 
 @media (max-width: 640px) {
+  .scroll-to-top {
+    bottom: 16px;
+    right: 16px;
+    transform: scale(0.85); /* Makes it slightly smaller on phones */
+  }
   body {
     font-size: 16px;
   }
