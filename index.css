@@ -412,6 +412,7 @@ code {
   bottom: 30px; /* Adjust distance from bottom */
   right: 30px;  /* Adjust distance from right side */
   z-index: 9999 !important; /* This forces it above ALL other panels */
+  display: flex;
 }
 
 .scroll-to-top::part(base) {
